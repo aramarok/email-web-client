@@ -11,6 +11,7 @@
 	</ui:define>
 
 	<ui:define name="content">
+
 		<ice:panelGroup styleClass="exampleBox panelBorderContainer">
 			<ice:panelBorder id="page" styleClass="pnlBrdrDemo"
 				renderNorth="false" renderSouth="false" renderCenter="true"
@@ -18,27 +19,29 @@
 
 				<f:facet name="west">
 					<div class="homeLeftMenu">
-						<ice:commandLink
-							styleClass="link" action="#{InboxBean.init}"
-							value="#{msg['home.menu.inbox']}" />
-						<br/>
-						<ice:commandLink
-						styleClass="link" action="#{HomeBean.init}"
-						value="#{msg['home.menu.sent']}" />
-						<br/>
-						<ice:commandLink
-						styleClass="link" action="#{HomeBean.init}"
-						value="#{msg['home.menu.drafts']}" />
-						<br/>
-						<ice:commandLink
-						styleClass="link" action="#{HomeBean.init}"
-						value="#{msg['home.menu.trash']}" />							
-					</div>
+					<ice:commandLink styleClass="link"
+						action="#{HomeBean.checkEmail}" value="#{msg['home.menu.checkEmail']}" />
+						 <br />
+					<ice:commandLink styleClass="link" action="#{ComposeEmailBean.init}"
+						value="#{msg['home.menu.composeEmail']}" />
+						 <br />
+						  <br />
+						   <br />
+						    <br />
+
+					<ice:commandLink styleClass="link" action="#{InboxBean.init}"
+						value="#{msg['home.menu.inbox']}" /> <br />
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.sent']}" /> <br />
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.drafts']}" /> <br />
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.trash']}" /></div>
 				</f:facet>
 
 				<f:facet name="center">
-					<div class="scrollableDiv borderTable height255px" style="overflow-x: hidden;">
-						<ui:insert name="contentA" />
+					<div class="scrollableDiv borderTable height500px"
+						style="overflow-x: hidden;"><ui:insert name="centerContent" />
 					</div>
 				</f:facet>
 

@@ -3,7 +3,9 @@ package net.emailwebclient.bl;
 import java.util.List;
 
 import net.emailwebclient.dao.EmailAccountDAO;
+import net.emailwebclient.dao.EmailDAO;
 import net.emailwebclient.dao.UserDAO;
+import net.emailwebclient.model.Email;
 import net.emailwebclient.model.EmailAccount;
 import net.emailwebclient.model.User;
 
@@ -11,6 +13,7 @@ public class Services {
 
 	private UserDAO userDAO;
 	private EmailAccountDAO emailAccountDAO;
+	private EmailDAO emailDAO;
 
 	public User login(String userName, String password) {
 		User user = userDAO.getUser(userName);
@@ -36,6 +39,10 @@ public class Services {
 	public List<EmailAccount> getEmailAccounts(User userFilter) {
 		return emailAccountDAO.getEmailAccounts(userFilter);
 	}
+	
+	public List<Email> getInboxEmails(User userFilter) {
+		return emailDAO.getInboxEmails(userFilter);
+	}
 
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
@@ -51,6 +58,14 @@ public class Services {
 
 	public void setEmailAccountDAO(EmailAccountDAO emailAccountDAO) {
 		this.emailAccountDAO = emailAccountDAO;
+	}
+
+	public EmailDAO getEmailDAO() {
+		return emailDAO;
+	}
+
+	public void setEmailDAO(EmailDAO emailDAO) {
+		this.emailDAO = emailDAO;
 	}
 
 }
