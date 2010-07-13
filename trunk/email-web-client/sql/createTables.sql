@@ -35,27 +35,10 @@ INSERT INTO `users`
 		(1, 'test','test','Jim','Smith','Timisoara',25,1),
 		(2, 'test2','test2','Carl','Jason','Arad',32,1);
 		
-
 INSERT INTO `email_accounts`
-	(`EMAIL_ACCOUNT_ID`, `USER_NAME`,`PASSWORD`,`POP_SERVER`,`PORT`,`USER_ID`)
+	(`EMAIL_ACCOUNT_ID`, `PROTOCOL`, `HOST`,`PORT`, `USER_NAME`,`PASSWORD`,`USER_ID`, `USE_EMAIL_ACCOUNT`)
 	VALUES
-		(1, 'dreytc','password for dreytc','smtp.gmail.com', 995, 1),
-		(2, 'test','password for test','smtp.gmail.com', 995, 1);
-
+		(1, 'POP','GMAIL.COM',995, 'test1', 'test1', 1, 1),
+		(2, 'POP3','GMAIL.COM',921, 'test2', 'test2', 1, 0);
 
 		
-
-	
-
-
-
-CREATE TABLE `files` (
-          `FILE_NAME` varchar(256) NOT NULL,
-          `SIZE` bigint(20) default NULL,
-          `USER_ID` bigint(20) NOT NULL,
-          `CONTENT` longblob,
-          `FILE_PATH` varchar(512) NOT NULL,
-          PRIMARY KEY  (`FILE_NAME`),
-          KEY `USER_ID_2` (`USER_ID`),                                                      
-          CONSTRAINT `files_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`USER_ID`)  
-        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC
