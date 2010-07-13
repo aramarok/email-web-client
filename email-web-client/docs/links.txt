@@ -1,0 +1,2 @@
+http://www.java-tips.org/other-api-tips/javamail/connecting-gmail-using-pop3-connection-with-ssl-6.html
+http://forums.sun.com/thread.jspa?threadID=5267916

@@ -1,0 +1,20 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body bgcolor="white">
+<ui:composition template="/layout/defaultTemplate.xhtml">
+
+	<ui:define name="content">
+
+		<div class="scrollableDiv borderTable height255px"
+			style="overflow-x: hidden;"><ui:insert name="contentList" /></div>
+
+		<div class="height160px" style="margin-bottom: 5px"><ui:insert
+			name="contentDescription" /> <ui:insert name="contentButtons" /></div>
+
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>

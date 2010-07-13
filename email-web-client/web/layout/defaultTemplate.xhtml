@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+<f:view>
+
+	<f:loadBundle var="msg"
+		basename="net.emailwebclient.view.resources.messages" />
+
+	<head>
+	<link rel="shortcut icon" href="./images/logoIcon.ico" />
+
+	<title>#{msg['application.name']} -
+	#{msg['application.version']}</title>
+
+	<ice:outputStyle href='./xmlhttp/css/xp/xp.css' />
+	<ice:outputStyle href="./css/main.css" />
+	<ice:outputStyle href="#{PreferencesBean.selectedCss}" />
+	
+	<script src="./js/main.js" />
+
+
+	<meta http-equiv="content-type" content="text-html; charset=utf-8" />
+	
+	</head>
+
+	<body>
+
+	<ice:form>
+
+		<ice:messages />
+
+		<ui:insert name="templateBody">
+			<h:graphicImage url="/images/logo.gif" />
+
+			<ui:include src="/layout/header.xhtml" />
+
+			<ui:insert name="content">
+
+			</ui:insert>
+
+			<ui:include src="/layout/footer.xhtml" />
+		</ui:insert>
+
+	</ice:form>
+
+	</body>
+
+</f:view>
+
+</html>
