@@ -4,7 +4,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<body bgcolor="white">
-		<ui:composition template="../../layout/addEditTemplate.xhtml">
+		<ui:composition template="../../layout/addEditTemplate.jspx">
 
 			<ui:define name="title">
 				<ice:outputText escape="false" value="#{msg['configuration.title']}"/>

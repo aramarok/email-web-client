@@ -1,6 +1,6 @@
 <f:subview xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	xmlns:ice="http://www.icesoft.com/icefaces/component" id="1">
 
 	<table width="100%" cellspacing="0" cellpadding="0">
 		<tr>
