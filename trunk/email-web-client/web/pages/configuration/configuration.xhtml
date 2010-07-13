@@ -1,0 +1,117 @@
+<html xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<body bgcolor="white">
+		<ui:composition template="../../layout/addEditTemplate.xhtml">
+
+			<ui:define name="title">
+				<ice:outputText escape="false" value="#{msg['configuration.title']}"/>
+			</ui:define>
+
+			<ui:define name="contentList">
+                <ice:dataTable	var="emailAccount"
+                				value="#{ConfigurationBean.accounts}"
+								width="100%"
+								sortColumn="#{ConfigurationBean.sortColumn}"
+								sortAscending="#{ConfigurationBean.sortOrder}"
+								columnWidths="10%,80%,10%"
+                >
+                    <ice:column>
+						<ice:rowSelector value="#{emailAccount.selected}" multiple="false" selectionListener="#{ConfigurationBean.elementRowSelection}" />
+
+                        <f:facet name="header">
+							<ice:commandSortHeader columnName="#{ConfigurationBean.hostColumn}" arrow="true">
+	                            <ice:outputText styleClass="label" escape="false" value="#{msg['configuration.accounts.table.host']}"/>
+							</ice:commandSortHeader>
+                        </f:facet>
+                        <ice:panelGroup styleClass="alignCenter">
+							<ice:outputText styleClass="#{!emailAccount.useEmailAccount ? 'textItalic' : 'text'}" value="#{emailAccount.host}" />
+						</ice:panelGroup>
+                    </ice:column>
+                    <ice:column>
+                        <f:facet name="header">
+							<ice:commandSortHeader columnName="#{ConfigurationBean.userNameColumn}" arrow="true">
+	                            <ice:outputText styleClass="label" escape="false" value="#{msg['configuration.accounts.table.userName']}"/>
+							</ice:commandSortHeader>
+                        </f:facet>
+                        <ice:panelGroup styleClass="alignLeft">
+							<ice:outputText styleClass="#{!emailAccount.useEmailAccount ? 'textItalic' : 'text'}" value="#{emailAccount.userName}" />
+						</ice:panelGroup>
+                    </ice:column>
+                </ice:dataTable>
+			</ui:define>
+
+			<ui:define name="contentDescription">
+				<table class="borderTable" cellspacing="3" cellpadding="3" border="0">
+					<tr>
+						<td class="length150px">
+							<ice:outputText value="#{msg['configuration.accounts.description.protocol']}" styleClass="label" escape="false" />
+						</td>
+						<td>
+							<ice:inputText value="#{ConfigurationBean.protocol}" styleClass="length250px input" />
+						</td>
+					</tr>
+					<tr>
+						<td class="length150px">
+							<ice:outputText value="#{msg['configuration.accounts.description.host']}" styleClass="label" escape="false" />
+						</td>
+						<td>
+							<ice:inputText value="#{ConfigurationBean.host}" styleClass="length250px input" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ice:outputText value="#{msg['configuration.accounts.description.port']}" styleClass="label" escape="false" />
+						</td>
+						<td>
+							<ice:inputText value="#{ConfigurationBean.port}" styleClass="length250px input" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ice:outputText value="#{msg['configuration.accounts.description.userName']}" styleClass="label" escape="false" />
+						</td>
+						<td>
+							<ice:inputText value="#{ConfigurationBean.userName}" styleClass="length250px input" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ice:outputText value="#{msg['configuration.accounts.description.password']}" styleClass="label" escape="false" />
+						</td>
+						<td>
+							<ice:inputText value="#{ConfigurationBean.password}" styleClass="length250px input" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ice:outputText value="#{msg['configuration.accounts.description.useEmailAccount']}" styleClass="label" escape="false" />
+						</td>
+						<td>
+							<ice:inputText value="#{ConfigurationBean.useEmailAccount}" styleClass="length250px input" />
+						</td>
+					</tr>
+				</table>
+			</ui:define>
+
+			<ui:define name="contentButtons">
+				<table class="borderTable" cellspacing="3" cellpadding="3">
+					<tr>
+						<td align="left">
+							<ice:commandButton value="#{msg['disputeLostStolenTypeNewButtonLabel']}" action="#{ConfigurationBean.addNew}" styleClass="length80px button" />
+							<ice:commandButton value="#{msg['disputeLostStolenTypeSaveEnableButtonLabel']}" action="#{ConfigurationBean.save}" styleClass="length80px button" />
+							<ice:commandButton value="#{msg['disputeLostStolenTypeDisableButtonLabel']}" action="#{ConfigurationBean.delete}" styleClass="length80px button" />
+						</td>
+					</tr>
+				</table>
+			</ui:define>
+<!-- 
+			<ui:define name="pagePopups">
+			    <ui:include src="disputeLostStolenTypeDescriptionPopup.xhtml"/>
+			</ui:define>
+ -->
+		</ui:composition>
+	</body>
+</html>

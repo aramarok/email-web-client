@@ -1,0 +1,1758 @@
+.headerTitle {
+	width: 70%;
+}
+
+.headerUserInfo {
+	text-align: right;
+}
+
+.headerUserInfoNav {
+	font-size: xx-small;
+	margin: 0px;
+}
+
+.headerConnectionStatus {
+	text-align: center;
+}
+
+.connectionStatus {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.link {
+	font-style: normal;
+	text-decoration: underline;
+}
+
+.text {
+	font-size: 8pt;
+	vertical-align: middle;
+}
+
+.label,
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	font-style:italic;
+}
+
+.input, .inputArea {
+    border: 1px solid;
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+}
+
+.length80px  { width:80px; }
+.length150px { width:150px; }
+.length250px { width:250px; }
+
+/* ---------------------------------------- */
+/*          Data Alignment Styles           */
+/* ---------------------------------------- */
+.alignText{
+	text-align: left;
+}
+
+.alignDate,.alignCenter{
+	text-align: center;
+}
+
+.alignLeft{
+	text-align: left;
+}
+
+.alignNumber{
+	text-align: right;
+}
+
+.textItalic{
+	font-style:italic;
+	font-size: 8pt;
+	vertical-align: middle;
+}
+
+.button{
+	font-family: Verdana, Arial;
+    font-size: 7pt;
+   	font-weight:bold;
+    height:20px;
+    padding:0px;
+    padding-bottom:1px; /* correction for FF */
+    margin:2px;
+	cursor:pointer;
+}
+
+.borderTable{
+	width:100%;
+	margin-bottom:1px;
+	height:100%;
+}
+
+
+
+
+
+
+/* ---------------------------------------- */
+/*      CORRECT SOME ICEFACES STYLES        */
+/* ---------------------------------------- */
+.iceInpTxt, .iceInpSecrt{
+	margin-left:0px;
+	padding:1px;
+}
+
+.iceInpTxtArea{
+	margin:0px;
+	padding:1px;
+}
+
+.iceInpFile{
+	vertical-align:middle;
+}
+
+.iceSelOneMnu, 
+.iceSelOneMnu-dis{
+	padding:0px;
+}
+
+.iceSelBoolChkbx,
+.iceSelOneMnu{
+	cursor:pointer;
+}
+
+.iceSelBoolChkbx,
+.iceSelBoolChkbx-dis,
+.iceSelOneRb input,
+.iceSelOneRb-dis input{
+	padding:0px;
+	margin:0px;
+	vertical-align:middle;
+	height:13px;
+	width:13px;
+}
+
+.iceSelOneRb input,
+.iceSelOneRb-dis input{
+	margin-right:5px;
+}
+
+.iceSelOneRb,
+.iceSelOneRb table{
+	border:0;
+}
+
+.iceSelOneRb,
+.iceSelOneRb table,
+.iceSelOneRb-dis,
+.iceSelOneRb-dis table{
+	padding:0px;
+	margin:0px;
+}
+
+.icePnlPopHdr .iceOutTxt{
+	font-size:8pt;
+}
+
+.icePnlPop{
+	height:auto;
+	border:1px solid #80B0F0;
+	background-color:transparent;
+	padding:1px;
+}
+
+
+.iceDatTblColHdr,
+.iceDatTblColHdr1,
+.iceDatTblColHdr2
+{
+    background-color: #FAFCFE;
+}
+
+.icePnlPopBody{
+	padding:10px;
+	background-color:#BBCEE2;
+}
+
+.iceSelInpDateInput,
+.iceSelInpDateInput-dis,
+.iceSelOneMnu,
+.iceSelOneMnu-dis{
+	border:1px solid #B2C6C9;
+	background-color:#FFFFFF;
+	color:#3566BB;
+}
+
+.iceSelInpDateInput{
+	background-color:#FFFFE5;
+}
+
+.iceInpRchTxt{
+	border:1px solid #CDDBEA;
+}
+
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	color:#204060;
+}
+
+.iceSelOneRb-dis{
+	background-color:transparent;
+}
+
+.iceSelInpDateInput-dis,
+.iceSelOneMnu-dis{
+	background-color: #EEEEEE;
+}
+
+.iceSelInpDateInput,
+.iceSelInpDateInput-dis,
+.iceSelOneMnu,
+.iceSelOneMnu-dis,
+.iceSelMnyMnu,
+.iceSelMnyMnu-dis{
+	font-size:8pt;
+	width:150px;
+	margin:0px;
+}
+
+.iceSelOneMnu,
+.iceSelMnyMnu{
+	font-face:Arial;
+}
+
+.iceSelInpDateInput{
+	width:80px;
+}
+.iceSelInpDatePopup,
+.iceSelInpDateInput,
+.iceSelInpDateOpenPopup, 
+.iceSelInpDateClosePopup{
+	display:inline;
+}
+
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	font-style:italic;
+}
+
+/* --------------------------- */
+/*       STYLE FOR TABLES      */
+/* --------------------------- */
+.iceDatTbl{
+	border:1px solid #CDDBEA;
+	background-color:#FAFCFE;
+}
+
+.iceDatTblRow1{
+	background-color:#E6EDF4;
+}
+
+.iceDatTblRow2{
+	background-color:#F1F5F9;
+}
+
+.iceDatTblCol,
+.iceDatTblCol1,
+.iceDatTblCol2
+{
+    border-color: #BBCEE2;
+}
+
+.iceDatTblColHdr,
+.iceDatTblColHdr1,
+.iceDatTblColHdr2{
+    border-color:#80A0C0;
+    border-bottom:1px solid #80A0C0;
+	background-color:#A9C2D9;
+}
+
+.iceDatTblColHdr .iceOutTxt,
+.iceDatTblColHdr1 .iceOutTxt,
+.iceDatTblColHdr2 .iceOutTxt{
+	color:#204060;
+}
+
+.iceDatTblCol,
+.iceDatTblCol1,
+.iceDatTblCol2,
+.icePnlGrdCol1{
+	white-space: nowrap;
+}
+
+.iceRowSelMouseOver{
+	background-color:#CDDBEA;
+}
+.iceRowSelMouseOver .iceOutTxt{
+	color:#FFFFFF;
+}
+
+.iceRowSelSelected{
+	background-color:#A2BCD8;
+}
+.iceRowSelSelected .iceOutTxt{
+	color:#F1F5F9;
+}
+
+/* TEMPORARY PATCH FOR ENTITIES DATATABLES */
+.iceDatTbl div table{
+	width:100%;
+}
+
+/* TEMPORARY PATCH FOR ICEFACES IFRAME UNDER DATEPOPUP */
+.iceSelInpDateIFrameFix{
+	width:350px;
+}
+
+
+
+/* --------------------------- */
+/*       STYLE FOR TABLES      */
+/* --------------------------- */
+
+/* This is used to remove the stupid padding inserted by span inside .icePnlGrp */
+.iceDatTblCol .icePnlGrp .iceOutTxt,
+.iceDatTblCol1 .icePnlGrp .iceOutTxt,
+.iceDatTblCol2 .icePnlGrp .iceOutTxt{
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+.iceDatTbl{
+	margin:0px;
+}
+
+.iceDatTblCol,
+.iceDatTblCol1,
+.iceDatTblCol2
+{
+    padding:1px 4px;
+    margin:0px;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.iceDatTblColHdr,
+.iceDatTblColHdr1,
+.iceDatTblColHdr2{
+	background-image:none;
+	/*	background-image:url('../images/ch.gif');
+	background-repeat:repeat-x;
+	height:18px;*/
+	vertical-align:middle;
+    padding-top:1px;
+    padding-bottom:1px;
+    margin:0px;
+}
+
+.iceDatTblColHdr .iceOutTxt,
+.iceDatTblColHdr1 .iceOutTxt,
+.iceDatTblColHdr2 .iceOutTxt{
+	font-family:Verdana;
+	font-size:7pt;
+}
+
+.iceRowSelMouseOver,
+.iceRowSelSelected{
+	cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+*/
+
+
+
+
+
+/* base */
+
+/* ------------------------------------ */
+/*             COLOR STYLES             */
+/* ------------------------------------ */
+#apfLogin{
+	background-color:#FFFFFF;
+}
+
+.apfContent,
+.apfInput,
+.apfInputArea,
+.apfLoginInput,
+.apfLoginRound,
+.apfContentRound *,
+.apfText-dis,
+.apfTextAuthorization-dis,
+.iceDatTblColHdr,
+.iceDatTblColHdr1,
+.iceDatTblColHdr2,
+th
+{
+    background-color: #FAFCFE;
+}
+
+.icePnlPopBody{
+	background-color:#BBCEE2;
+}
+
+.apfInput,
+.apfInput-dis,
+.apfInputArea,
+.apfInputArea-dis,
+.apfLoginInput,
+.iceSelInpDateInput,
+.iceSelInpDateInput-dis,
+.iceSelOneMnu,
+.iceSelOneMnu-dis{
+	border:1px solid #B2C6C9;
+	background-color:#FFFFFF;
+	color:#3566BB;
+}
+
+.iceSelInpDateInput{
+	background-color:#FFFFE5;
+}
+
+.iceInpRchTxt{
+	border:1px solid #CDDBEA;
+}
+
+.apfLabel,
+.apfLabelEmphasized,
+.apfRequiredLabel,
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	color:#204060;
+}
+
+.iceSelOneRb-dis{
+	background-color:transparent;
+}
+
+.apfText,
+.apfTextCopyright,
+.apfTextItalic,
+.apfTextBold{
+	color:#3566BB;
+}
+
+.apfTextAuthorization{
+	color:#AA3196;
+}
+
+.apfLink, .apfInnerLinkText{
+	color:#2F4F88;
+}
+
+.apfLink{
+	border-bottom:1px solid #A2BCD8;
+}
+.apfLink:hover, .apfLink:hover .apfInnerLinkText{
+	color:#4E7CCA;
+}
+
+.apfButton,
+.apfButton-dis,
+.apfButtonPrimary,
+.apfButtonPrimary-dis,
+.lrbutton,
+.lrbutton-dis{
+    border-bottom: 2px solid #555555;
+    border-left: 1px solid #AAAAAA;
+    border-right: 2px solid #888888;
+    border-top: 1px solid #CCCCCC;
+    background-color: #80A0C0;
+    color:#FFFFFF;
+}
+
+.lrbutton-dis,
+.apfButton-dis,
+.apfButtonPrimary-dis{
+	background-color: #CCCCCC;
+    color:#888888;
+}
+
+.apfInput-dis,
+.iceSelInpDateInput-dis,
+.iceSelOneMnu-dis,
+.apfInputArea-dis{
+	background-color: #EEEEEE;
+}
+
+/*body,*/
+.apfFooter,
+#apfLoginHorizonContent,
+.apfNavigationSide,
+.apfNavigationFlyover,
+.apfHeader,
+.apfLoginRound *,
+.apfContentSpacer{
+    background-color: #BBCEE2;
+/*    background-image: url('../images/background.gif');*/
+}
+
+/* rounded corners */
+.r1,.r2,.r3,.r4,.r5{
+    border-left-color: #BBCEE2;
+    border-right-color: #BBCEE2;
+}
+
+/* ------------------------------------ */
+/*      OVERRIDE ACI LAYOUT STYLES      */
+/* ------------------------------------ */
+.apfHeaderTitle .iceOutTxt,
+.loginLine{
+	border-color:#3566BB;
+}
+
+.apfTitle .iceOutTxt{
+	color:#A2BCD8;
+}
+
+.apfRequiredMarker .iceOutTxt,
+.apfCrumbNav,
+.apfCrumbNav .iceOutTxt,
+.apfCrumbNav A:link,
+.apfCrumbNav A:active,
+.apfCrumbNav A:visited,
+.apfCrumbNav A:hover{
+	color:#3566BB;
+}
+
+.apfCrumbNav .apfCrumbNavArrow{
+	color:#D8BCA2;
+}
+
+
+/* --------------------------- */
+/*       STYLE FOR TABLES      */
+/* --------------------------- */
+.iceDatTbl{
+	border:1px solid #CDDBEA;
+	background-color:#FAFCFE;
+}
+
+.iceDatTblRow1{
+	background-color:#E6EDF4;
+}
+
+.iceDatTblRow2{
+	background-color:#F1F5F9;
+}
+
+.iceDatTblCol,
+.iceDatTblCol1,
+.iceDatTblCol2
+{
+    border-color: #BBCEE2;
+}
+
+.iceDatTblColHdr,
+.iceDatTblColHdr1,
+.iceDatTblColHdr2{
+    border-color:#80A0C0;
+    border-bottom:1px solid #80A0C0;
+	background-color:#A9C2D9;
+}
+
+.iceDatTblColHdr .iceOutTxt,
+.iceDatTblColHdr1 .iceOutTxt,
+.iceDatTblColHdr2 .iceOutTxt{
+	color:#204060;
+}
+
+.iceRowSelMouseOver{
+	background-color:#CDDBEA;
+}
+.iceRowSelMouseOver .iceOutTxt{
+	color:#FFFFFF;
+}
+
+.iceRowSelSelected{
+	background-color:#A2BCD8;
+}
+.iceRowSelSelected .iceOutTxt{
+	color:#F1F5F9;
+}
+
+.borderLeft{
+	border-left:1px solid #A2BCD8;
+}
+
+.borderBottom{
+	border-bottom:1px solid #A2BCD8;
+}
+
+/* ---------------------- */
+/* STYLE FOR VERTICAL NAV */
+/* ---------------------- */
+.apfNavigationSide .icePnlClpsblHdr{
+	border:1px solid #80A0C0;
+}
+
+.apfNavigationSide .icePnlClpsblHdr .iceOutTxt, 
+.apfNavigationSide .icePnlClpsblColpsdHdr .iceOutTxt{
+	color:#2F4F88;
+}
+
+.apfNavigationSide .icePnlClpsblColpsdHdr{
+	border:1px solid #DDDDDD;
+}
+.apfNavigationSide .icePnlClpsblCnt{
+	border:1px solid #A2BCD8;
+	background-color:#E6EDF4;
+}
+
+.apfNavigationSide a{
+	color:#2F4F88;
+}
+.apfNavigationSide a:hover{
+/*	border-bottom:1px solid #888888;*/
+	color:#4E7CCA;
+}
+
+/* ----------------------- */
+/* STYLE FOR HORIZONAL NAV */
+/* ----------------------- */
+.apfSecondaryNavigation{
+	background-image:url('../images/bg_horiz_menu_blue.gif');
+	background-repeat:repeat-x;
+	background-position:center;
+}
+
+.apfSecondaryNavigation{
+	background-color:#A9C2D9;
+	border:1px solid #80A0C0;
+}
+
+.apfSecondaryNavigation a.apfSecNavLink {
+    color: #1F577F;
+    font-weight:normal;
+}
+
+.apfSecondaryNavigation a.apfSecNavCurrentLink {
+    color: #1F577F;
+    background-color:#E6EDF4;
+    border:1px solid #80A0C0;
+}
+
+/* ------------------------------------------ */
+/*       STYLES FOR COLLAPSIBLE PANNELS       */
+/* ------------------------------------------ */
+#apfContentCollapse .icePnlClpsblHdr .iceOutTxt,
+#apfContentCollapse .icePnlClpsblColpsdHdr .iceOutTxt{
+	color:#204060;
+}
+
+#apfContentCollapse .icePnlClpsblHdr,
+#apfContentCollapse .icePnlClpsblColpsdHdr{
+    background-color:#CDDBEA;
+    border:1px solid #CDDBEA;
+}
+
+#apfContentCollapse .icePnlClpsblCnt,
+#apfContentCollapse .icePnlClpsblColpsdCnt{
+	background-color:#ECF3FA;
+    border: 1px solid #CDDBEA;
+}
+
+/* ----------------------- */
+/*       MISC STYLES       */
+/* ----------------------- */
+.borderTableLogin{
+	background-color:#E6EDF4; 
+	border:1px solid #A2BCD8;
+}
+
+.borderTableTitle{
+	border:1px solid #A2BCD8;
+	background-color:#CDDBEA;
+}
+
+.borderTableH, .borderTableWH, .borderTable{
+	border:1px solid #CDDBEA;
+	background-color:#ECF3FA;
+}
+
+.issuerBorderTable{
+	background-color:#CDDBEA;
+	border:1px solid #A9C2D9;
+}
+
+.acquirerBorderTable{
+	background-color:#D9F2E5;
+	border:1px solid #ABE2C6;
+}
+
+/* ----------------------------------- */
+/*   Style for the three thin lines    */
+/* ----------------------------------- */
+.apfLineTwo{
+    border-top-color: #EEEEEE;
+}
+.apfLineOne{
+    border-top-color: #2F4F88;
+}
+.apfLineThree{
+    border-top-color: #BBCEE2;
+}
+
+/* --------------------------------- */
+/*         Errors Div Styles         */
+/* --------------------------------- */
+.errorMessages{
+	background-color:white;
+	border:1px solid #CCCCCC;
+	color:red;
+}
+
+/* ---------------------------------------- */
+/*          Red Text Color Styles           */
+/* ---------------------------------------- */
+.apfError,
+.iceMsgError,
+.apfTextUrgent {
+	color: #BB0000;
+}
+
+.apfTextOnUs {
+	color: #FF0000;
+}
+
+.apfTextAcquirer {
+	color: #31908F;
+}
+
+/* TEMPORARY PATCH FOR ENTITIES DATATABLES */
+.iceDatTbl div table{
+	width:100%;
+}
+
+/* TEMPORARY PATCH FOR ICEFACES IFRAME UNDER DATEPOPUP */
+.iceSelInpDateIFrameFix{
+	width:350px;
+}
+
+/* This is used to correct the problem Mozzila has when dealing with div paddings and margins */
+div{
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+html, body{
+	font-size:9pt;
+}
+
+body{
+	overflow-y:scroll;
+	overflow-x:auto;
+}
+
+table {
+	empty-cells:show;
+}
+
+.iceDatTblCol,
+.iceDatTblCol1,
+.iceDatTblCol2,
+.icePnlGrdCol1{
+	white-space: nowrap;
+}
+
+.wrapText{
+	white-space: normal;
+}
+
+/* --------------------------- */
+/* STYLE FOR CONNECTION STATUS */
+/* --------------------------- */
+.apfHeaderConnectionStatus {
+    text-align: center;
+}
+
+.connectionStatus{
+	width:40px;
+	height:40px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.connectionStatus .iceOutConStatInactv {
+    background-image: url("../images/connect_idle.gif");
+}
+.connectionStatus .iceOutConStatActv {
+    background-image: url("../images/connect_active.gif");
+}
+.connectionStatus.iceOutConStatCaution {
+    background-image: url("../images/connect_caution.gif");
+}
+.connectionStatus .iceOutConStatDisconnect {
+    background-image: url("../images/connect_disconnected.gif");
+}
+
+/* ---------------------------------------- */
+/*      CORRECT SOME ICEFACES STYLES        */
+/* ---------------------------------------- */
+.iceInpTxt, .iceInpSecrt{
+	margin-left:0px;
+	padding:1px;
+}
+
+.iceInpTxtArea{
+	margin:0px;
+	padding:1px;
+}
+
+.iceInpFile{
+	vertical-align:middle;
+}
+
+.iceSelOneMnu, 
+.iceSelOneMnu-dis{
+	padding:0px;
+}
+
+.iceSelBoolChkbx,
+.iceSelOneMnu{
+	cursor:pointer;
+}
+
+.iceSelBoolChkbx,
+.iceSelBoolChkbx-dis,
+.iceSelOneRb input,
+.iceSelOneRb-dis input{
+	padding:0px;
+	margin:0px;
+	vertical-align:middle;
+	height:13px;
+	width:13px;
+}
+
+.iceSelOneRb input,
+.iceSelOneRb-dis input{
+	margin-right:5px;
+}
+
+.iceSelOneRb,
+.iceSelOneRb table{
+	border:0;
+}
+
+.iceSelOneRb,
+.iceSelOneRb table,
+.iceSelOneRb-dis,
+.iceSelOneRb-dis table{
+	padding:0px;
+	margin:0px;
+}
+
+.icePnlPopHdr .iceOutTxt{
+	font-size:8pt;
+}
+
+.icePnlPop{
+	height:auto;
+	border:1px solid #80B0F0;
+	background-color:transparent;
+	padding:1px;
+}
+
+/* ------------------------------------ */
+/*      OVERRIDE ACI LAYOUT STYLES      */
+/* ------------------------------------ */
+.loginLine{
+	border-width:0px;
+	border-style:solid;
+	border-bottom-width:1px;
+	width:80%;
+}
+
+.apfLoginForm{
+	padding:0px;
+}
+
+.apfHeader{
+	height:45px;
+}
+
+.apfHeaderTitle{
+	width:70%;
+}
+
+.apfHeaderUserInfo{
+	text-align:center;
+}
+
+.apfContentPageHeader{
+	margin:1px 3px;
+}
+
+.apfResultsGrid{
+	padding-left:0px;
+	width:100%;
+	margin:0px;
+	padding:0 3px;
+}
+
+.apfContentSpacer{
+	width:5px;
+}
+
+.icePnlPopBody{
+	padding:10px;
+}
+
+.apfInput,
+.apfInput-dis,
+.apfInputArea,
+.apfInputArea-dis,
+.apfLoginInput,
+.iceSelInpDateInput,
+.iceSelInpDateInput-dis,
+.iceSelOneMnu,
+.iceSelOneMnu-dis,
+.iceSelMnyMnu,
+.iceSelMnyMnu-dis{
+	font-size:8pt;
+	width:150px;
+	margin:0px;
+}
+
+.iceSelOneMnu,
+.iceSelMnyMnu{
+	font-face:Arial;
+}
+
+.iceSelInpDateInput{
+	width:80px;
+}
+.iceSelInpDatePopup,
+.iceSelInpDateInput,
+.iceSelInpDateOpenPopup, 
+.iceSelInpDateClosePopup{
+	display:inline;
+}
+
+.apfLabel,
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	font-style:italic;
+}
+
+.apfError{
+	font-weight:normal;
+}
+
+.apfError,
+.apfLink,
+.apfLabel,
+.apfLabelEmphasized,
+.apfRequiredLabel,
+.apfText,
+.apfTextItalic,
+.apfTextBold,
+.apfTextUrgent,
+.apfTextOnUs,
+.apfTextAcquirer,
+.apfTextAuthorization,
+.apfCrumbNav,
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	font-size:8pt;
+}
+
+.apfTextCopyright{
+	font-size:7pt;
+	font-style:normal;
+}
+
+.apfTextItalic{
+	font-style:italic;
+}
+
+.apfTextBold{
+	font-weight:bold;
+}
+
+.apfInputArea{
+	overflow-y:scroll;
+}
+
+.apfLink{
+	font-style:italic;
+	text-decoration:none;
+}
+.apfLink, .apfInnerLinkText{
+	padding-bottom:0px;
+}
+.apfLink:hover{
+	text-decoration:underline;
+}
+
+.apfButton,
+.apfButton-dis,
+.apfButtonPrimary,
+.apfButtonPrimary-dis,
+.lrbutton,
+.lrbutton-dis{
+    font-family: Verdana, Arial;
+    font-size: 7pt;
+   	font-weight:bold;
+    height:20px;
+    padding:0px;
+    padding-bottom:1px; /* correction for FF */
+    margin:2px;
+	cursor:pointer;
+}
+
+.lrbutton,
+.lrbutton-dis{
+    font-size: 6pt;
+}
+
+.apfButtonPrimary,
+.apfButtonPrimary-dis{
+	font-weight:bold;
+}
+
+.apfButton-dis,
+.apfButtonPrimary-dis,
+.lrbutton-dis{
+	cursor:default;
+}
+
+.lrbutton,
+.lrbutton-dis{
+    font-weight: normal;
+	width:20px;
+}
+
+.apfTitle .iceOutTxt{
+	font-style:italic;
+	font-size:small;
+}
+
+.apfCrumbNav .iceOutTxt,
+.apfCrumbNav A:link,
+.apfCrumbNav A:active,
+.apfCrumbNav A:visited,
+.apfCrumbNav A:hover{
+	font-size:xx-small;
+	font-style: italic;
+}
+
+/* --------------------------- */
+/*       STYLE FOR TABLES      */
+/* --------------------------- */
+
+/* This is used to remove the stupid padding inserted by span inside .icePnlGrp */
+.iceDatTblCol .icePnlGrp .iceOutTxt,
+.iceDatTblCol1 .icePnlGrp .iceOutTxt,
+.iceDatTblCol2 .icePnlGrp .iceOutTxt{
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+.iceDatTbl{
+	margin:0px;
+}
+
+.iceDatTblCol,
+.iceDatTblCol1,
+.iceDatTblCol2
+{
+    padding:1px 4px;
+    margin:0px;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.iceDatTblColHdr,
+.iceDatTblColHdr1,
+.iceDatTblColHdr2{
+	background-image:none;
+	/*	background-image:url('../images/ch.gif');
+	background-repeat:repeat-x;
+	height:18px;*/
+	vertical-align:middle;
+    padding-top:1px;
+    padding-bottom:1px;
+    margin:0px;
+}
+
+.iceDatTblColHdr .iceOutTxt,
+.iceDatTblColHdr1 .iceOutTxt,
+.iceDatTblColHdr2 .iceOutTxt{
+	font-family:Verdana;
+	font-size:7pt;
+}
+
+.iceRowSelMouseOver,
+.iceRowSelSelected{
+	cursor:pointer;
+}
+
+/* ---------------------- */
+/* STYLE FOR VERTICAL NAV */
+/* ---------------------- */
+.apfNavigationSide{
+	padding-left:4px;
+	padding-right:4px;
+}
+
+.apfNavigationSide, .apfHeaderLogo{
+	width:120px;
+}
+
+.apfNavigationSide .icePnlClpsbl,
+.apfNavigationSide .icePnlClpsblColpsd {
+	width:100%;
+	text-align:left;
+}
+.apfNavigationSide .icePnlClpsblHdr,
+.apfNavigationSide .icePnlClpsblColpsdHdr{
+/*    background-image: url( "../images/bg_side_menu.gif" );
+    background-repeat: repeat-x;
+    background-position: center;*/
+}
+.apfNavigationSide .icePnlClpsblHdr div{
+    background-image: url( "../images/dbl_up.gif" );
+    background-repeat: no-repeat;
+    background-position: left;
+    width:100%;
+}
+.apfNavigationSide .icePnlClpsblColpsdHdr div{
+    background-image: url( "../images/dbl_down.gif" );
+    background-repeat: no-repeat;
+    background-position: left;
+    width:100%;
+}
+.apfNavigationSide .icePnlClpsblHdr .iceOutTxt, 
+.apfNavigationSide .icePnlClpsblColpsdHdr .iceOutTxt{
+	font-style: italic;
+	font-size:smaller;
+	padding-left:20px;
+}
+
+.apfNavigationSide a{
+	text-decoration:none;
+	font-size:smaller;
+	padding-left:8px;
+	/* the image does not appear for normal links but something has to be there
+	   in order for the hover image to appear
+	*/
+	background-image:url("../images/linkImg.gif");
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+
+.apfNavigationSide .iceOutTxt{
+	font-size:smaller;
+	font-style:italic;
+	padding-left:8px;
+}
+
+.apfNavigationSide a:hover{
+	text-decoration: underline;
+	background-image:url("../images/linkImgHover.gif");
+}
+
+/* ----------------------- */
+/* STYLE FOR HORIZONAL NAV */
+/* ----------------------- */
+.apfSecondaryNavigation{
+	padding:5px 5px;
+}
+
+.apfSecondaryNavigation a.apfSecNavLink {
+	font-size:larger;
+    font-weight:bold;
+}
+
+.apfSecondaryNavigation a.apfSecNavLink,
+.apfSecondaryNavigation a.apfSecNavCurrentLink {
+    text-decoration: none;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.apfSecondaryNavigation a.apfSecNavLink:hover,
+.apfSecondaryNavigation a.apfSecNavCurrentLink:hover{
+    text-decoration: underline;
+}
+
+/* ------------------------------------------ */
+/*       STYLES FOR COLLAPSIBLE PANNELS       */
+/* ------------------------------------------ */
+#apfContentCollapse{
+	margin-top:2px;
+	margin-bottom:2px;
+}
+
+#apfContentCollapse .icePnlClpsblHdr div {
+    background-image: url( "../images/dbl_up.gif" );
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+#apfContentCollapse .icePnlClpsblColpsdHdr div {
+    background-image: url( "../images/dbl_down.gif" );
+    background-repeat: no-repeat;
+    background-position: left;
+    width:100%;
+}
+#apfContentCollapse .icePnlClpsblHdr .iceOutTxt,
+#apfContentCollapse .icePnlClpsblColpsdHdr .iceOutTxt{
+	padding-left:20px;
+}
+
+#apfContentCollapse .icePnlClpsblHdr,
+#apfContentCollapse .icePnlClpsblColpsdHdr{
+    padding:2px;
+   	padding-left:5px;
+	font-weight: normal;
+    text-align: left;
+    margin-left:0px;
+    cursor: pointer;
+    background-image:none;
+/*    background-image: url( "../images/bg_clpsbl_menu.gif" );
+    background-repeat: repeat-x;
+    background-position: center;*/
+}
+
+#apfContentCollapse .icePnlClpsblCnt,
+#apfContentCollapse .icePnlClpsblColpsdCnt{
+	background-image:none;
+	padding:1px;
+    border-top: none;
+    margin: 0px;
+}
+
+#apfContentCollapse .icePnlClpsblCnt{
+	width:100%;
+}
+
+/* ----------------------- */
+/*       MISC STYLES       */
+/* ----------------------- */
+.borderTableLogin{
+	font-style:italic;
+}
+
+.borderTableH,
+.borderTableWH,
+.borderTable{
+	margin-bottom:1px;
+}
+.borderTable,
+.tableW,
+.issuerBorderTable,
+.acquirerBorderTable{
+	width:100%;
+}
+.borderTableH,
+.tableH{
+	height:100%;
+}
+.borderTableWH,
+.tableWH{
+	width:100%;
+	height:100%;
+}
+
+.issuerBorderTable,
+.acquirerBorderTable{
+	padding-left:5px;
+}
+
+input,
+select,
+.apfError,
+.apfText,
+.apfTextCopyright,
+.apfTextItalic,
+.apfTextBold,
+.apfTextAuthorization,
+.apfTextUrgent,
+.apfTextOnUs,
+.apfLink,
+.apfLabel,
+.apfLabelEmphasized,
+.apfRequiredLabel,
+.apfButton,
+.apfButton-dis,
+.apfButtonPrimary,
+.apfButtonPrimary-dis,
+.lrbutton,
+.lrbutton-dis,
+.iceSelOneRb,
+.iceSelOneRb-dis-dis{
+	vertical-align:middle;
+}
+
+.scrollableDiv{
+	overflow-x:auto;
+	overflow-y:auto;
+	width:100%;
+}
+
+/* ----------------------- */
+/*         WIDTHS          */
+/* ----------------------- */
+.length20px,.length20px-dis{ width:20px; }
+.length30px,.length30px-dis{ width:30px; }
+.length40px,.length40px-dis{ width:40px; }
+.length50px,.length50px-dis{ width:50px; }
+.length60px,.length60px-dis{ width:60px; }
+.length80px, .length80px-dis{ width:80px; }
+.length90px, .length90px-dis{ width:90px; }
+.length100px, .length100px-dis{	width:100px; }
+.length110px, .length110px-dis{	width:110px; }
+.length120px, .length120px-dis{	width:120px; }
+.length130px, .length130px-dis{	width:130px; }
+.length135px, .length135px-dis{	width:135px; }
+.length140px, .length140px-dis{	width:140px; }
+.length150px, .length150px-dis{	width:150px; }
+.length160px, .length160px-dis{	width:160px; }
+.length180px, .length180px-dis{	width:180px; }
+.length190px, .length190px-dis{	width:190px; }
+.length200px, .length200px-dis{	width:200px; }
+.length220px, .length220px-dis{	width:220px; }
+.length240px, .length240px-dis{	width:240px; }
+.length250px, .length250px-dis{	width:250px; }
+.length260px, .length260px-dis{	width:260px; }
+.length280px, .length280px-dis{	width:280px; }
+.length300px, .length300px-dis{	width:300px; }
+.length340px, .length340px-dis{	width:340px; }
+.length350px, .length350px-dis{	width:350px; }
+
+/* ----------------------- */
+/*         HEIGHTS 		   */
+/* ----------------------- */
+.height20px, .height20px-dis{ height:20px; }
+.height25px, .height25px-dis{ height:25px; }
+.height30px, .height30px-dis{ height:30px; }
+.height35px, .height35px-dis{ height:35px; }
+.height40px, .height40px-dis{ height:40px; }
+.height50px, .height50px-dis{ height:50px; }
+.height100px, .height100px-dis{ height:100px; }
+.height110px, .height110px-dis{	height:110px; }
+.height115px, .height115px-dis{	height:115px; }
+.height120px, .height120px-dis{	height:120px; }
+.height130px, .height130px-dis{	height:130px; }
+.height140px, .height140px-dis{	height:140px; }
+.height150px, .height150px-dis{	height:150px; }
+.height160px, .height160px-dis{	height:160px; }
+.height170px, .height170px-dis{	height:170px; }
+.height180px, .height180px-dis{	height:180px; }
+.height190px, .height190px-dis{	height:190px; }
+.height200px, .height200px-dis{	height:200px; }
+.height210px, .height210px-dis{	height:210px; }
+.height220px, .height220px-dis{	height:220px; }
+.height240px, .height240px-dis{	height:240px; }
+.height250px, .height250px-dis{	height:250px; }
+.height255px, .height255px-dis{	height:255px; }
+.height280px, .height280px-dis{	height:280px; }
+.height300px, .height300px-dis{	height:300px; }
+.height350px, .height350px-dis{	height:350px; }
+.height390px, .height390px-dis{	height:390px; }
+.height440px, .height440px-dis{	height:440px; }
+
+
+/* --------------------------------- */
+/*         Errors Div Styles         */
+/* --------------------------------- */
+.errorMessages{
+	position:absolute;
+	width:400px;
+	top:10px;
+	left:50%;
+	margin-left:-200px;
+	font-style:italic;
+	font-size:smaller;
+}
+
+.translucent70{
+    opacity: 0.7;
+    filter:alpha(opacity: 70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+}
+
+.opaque{
+    opacity: 1.0;
+    filter:alpha(opacity: 100);
+    -moz-opacity: 1.0;
+    -khtml-opacity: 1.0;
+}
+
+/* ---------------------------------------- */
+/*          Data Alignment Styles           */
+/* ---------------------------------------- */
+.alignText{
+	text-align: left;
+}
+
+.alignDate,.alignCenter{
+	text-align: center;
+}
+
+.alignNumber{
+	text-align: right;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~    Copyright 2007 by ACI Worldwide Inc., All Rights Reserved.
+ ~
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.apfHeader {
+    width: 100%;
+}
+
+.apfHeaderTitle {
+    font-size: 135%;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+    width: 60%;
+}
+
+.apfHeaderUserInfo {
+    text-align: center;
+}
+
+.apfHeaderUserInfoNav {
+    font-size: xx-small;
+    margin: 0px;
+}
+
+.apfHeaderUserInfoNav A {
+    text-decoration: underline;
+}
+
+.apfSecondaryNavigation {
+    border: 1px solid;
+    font-size: 85%;
+    margin: 0px;
+    padding: 3px;
+    text-decoration: none;
+}
+
+.apfSecondaryNavigation a {
+    padding-left: 3px;
+    text-decoration: underline;
+}
+
+.apfFooter {
+    font-size: 85%;
+    text-align: center;
+}
+
+.apfLine {
+    border-top-style: solid;
+    border-top-width: 1px;
+    display: block;
+}
+
+.apfLabel, .apfLabelEmphasized {
+  /* Used in the color css */
+}
+
+.apfLabelEmphasized {
+    font-weight: bold;
+}
+
+.apfInput, .apfInputArea {
+    border: 1px solid;
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+}
+
+.apfInputArea {
+    font-size: small;
+}
+
+.apfTitle {
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-top: 3px;
+    text-align: left;
+}
+
+.apfResult {
+    font-family: Arial, Helvetica, serif;
+    font-size: 85%;
+    font-weight: bold;
+    text-align: right;
+}
+
+.apfText {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.apfText-dis {
+}
+
+.apfLink, apfMoreNavLink {
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.apfMoreNavLink {
+    font-style: italic;
+}
+
+.apfSecNavLink {
+    font-size: x-small;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.apfButtonLink {
+    font-family: Verdana, Arial;
+    font-size: 85%;
+    font-weight: normal;
+    height: 20px;
+    text-decoration: underline;
+    padding-top: 5px;  /* just for IE to center the text */
+}
+
+.apfButton, .apfButtonPrimary {
+    border-bottom: 2px solid #555;
+    border-left: 1px solid #AAA;
+    border-right: 2px solid #888;
+    border-top: 1px solid #CCC;
+    font-family: Verdana, Arial;
+    font-size: 85%;
+    font-weight: normal;
+    height: 20px;
+    margin: 3px 10px 0px 0px;
+    padding-bottom: 1%;
+}
+
+.apfButtonPrimary {
+    font-weight: bold;
+}
+
+.apfCrumbNav {
+    font-family: Verdana, Arial;
+    font-size: xx-small;
+    font-style: italic;
+    margin: 0px 0px 3px 0px;
+}
+
+.apfCrumbNav A {
+    text-decoration: underline;
+}
+
+.apfError {
+    font-weight: bold;
+    text-align: left;
+}
+
+.apfWidth10 {
+    width: 10%;
+}
+
+.apfWidth20 {
+    width: 20%;
+}
+
+.apfWidth30 {
+    width: 30%;
+}
+
+.apfWidth40 {
+    width: 40%;
+}
+
+.apfWidth50 {
+    width: 50%;
+}
+
+.apfWidth60 {
+    width: 60%;
+}
+
+.apfWidth70 {
+    width: 70%;
+}
+
+.apfWidth80 {
+    width: 80%;
+}
+
+.apfWidth90 {
+    width: 90%;
+}
+
+.apfWidth100 {
+    width: 100%;
+}
+
+.apfMessageErrorBox, .apfMessageInfoBox {
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px 5px 0px 10px;
+}
+
+.apfMessageError, .apfMessageInfo {
+    font-size: 85%;
+    text-indent: 20px;
+}
+
+.apfMessageErrorTitle, .apfMessageInfoTitle {
+    font-size: 90%;
+    font-weight: bold;
+    padding-right: 15px;
+    text-indent: 10px;
+}
+
+.apfRequiredMarker {
+    font-size: 90%;
+    font-style: italic;
+    padding-right: 15px;
+    text-align: right;
+}
+
+.apfResultsGrid {
+    padding-left: 3px;
+    width: 99%;
+}
+
+.apfDeletePopup {
+    border-bottom: 2px solid;
+    border-left: 1px solid;
+    border-right: 2px solid;
+    border-top: 1px solid;
+    left: 38%;
+    padding: 0px;
+    position: absolute;
+    width: 24%;
+    z-index: 1000;
+}
+
+.apfDeletePopupHdr {
+    background-image: none;
+    border-bottom: 1px solid;
+    font-family: Verdana, Arial, Helvetica, serif;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.apfDeletePopupBody {
+    padding: 10px;
+}
+
+.apfSiteMapGroup {
+    padding: 0px 15px;
+}
+
+.apfSiteMapGroup p {
+    border-bottom-style: dotted;
+    border-bottom-width: thin;
+    font-weight: bold;
+    margin-bottom: 0pt;
+}
+
+.apfSiteMapGroup ul {
+    list-style: none outside;
+    margin: 0px;
+    padding: 3px;
+}
+
+.apfSiteMapGroup ul a,
+.apfSiteMapGroup ul a:link {
+    font-size: 80%;
+}
+
+#apfContentCollapse .icePnlClpsblHdr, 
+#apfContentCollapse .icePnlClpsblHdr-dis, 
+#apfContentCollapse .icePnlClpsblColpsdHdr, 
+#apfContentCollapse .icePnlClpsblColpsdHdr-dis {
+    border-style: solid solid dotted solid;
+}
+
+#apfContentCollapse .icePnlClpsblColpsdHdr, 
+#apfContentCollapse .icePnlClpsblColpsdHdr-dis{
+    border-style: solid solid none solid;
+}
+
+#apfContentCollapse .apfLabel{
+    text-decoration: none;
+}

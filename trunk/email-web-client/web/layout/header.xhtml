@@ -1,0 +1,52 @@
+<f:subview xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<table width="100%" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="headerTitle">
+				<ice:outputText escape="false" value="#{msg['application.name']}" />
+			</td>
+
+			<td class="headerUserInfo">
+				<ice:outputText escape="false" value="#{msg['loginUserName']}" styleClass="text" />
+				
+				<ice:outputText id="username" styleClass="text" value="#{SessionBean.loggedInUser.userName}" />
+				
+				<div class="headerUserInfoNav">
+				
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}" value="#{msg['linkHome']}" />
+										
+					<ice:outputText escape="false" value="#{msg['menuSeparator']}" />
+						 
+					<ice:commandLink styleClass="link" action="#{AddressBookBean.init}" value="#{msg['linkAddressBook']}" />
+					
+					<ice:outputText escape="false" value="#{msg['menuSeparator']}" />
+					
+					<ice:commandLink styleClass="link" action="#{ConfigurationBean.init}" value="#{msg['linkConfiguration']}" />
+										
+					<ice:outputText escape="false" value="#{msg['menuSeparator']}" />
+					
+					<ice:commandLink styleClass="link" action="#{PreferencesBean.init}" value="#{msg['linkPreferences']}" />
+					
+					<ice:outputText escape="false" value="#{msg['menuSeparator']}" />
+					
+					<ice:outputLink styleClass="link" target="_blank" value="./webhelp/index.html">
+						<ice:outputText styleClass="link" value="#{msg['linkHelp']}" escape="false" />
+					</ice:outputLink>
+								
+					<ice:outputText escape="false" value="#{msg['menuSeparator']}" />
+					
+					<ice:outputLink styleClass="link" value="logout.jsp">
+						<ice:outputText styleClass="link" value="#{msg['linkLogout']}" escape="false" />
+					</ice:outputLink>
+				</div>
+			</td>
+
+			<td class="headerConnectionStatus">
+				<div class="connectionStatus"><ice:outputConnectionStatus /></div>
+			</td>
+		</tr>
+	</table>
+
+</f:subview>

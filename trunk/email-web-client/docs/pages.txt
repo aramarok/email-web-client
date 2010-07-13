@@ -1,0 +1,14 @@
+Home page:
+ - view e-mails from inbox, drafts, sent, trash, and custom folders
+ - compose e-mail
+ - check e-mail
+
+Configuration page:
+ - configure e-mail accounts
+ - configure auto e-mail retrieval
+
+Address book page:
+ - add/edit contacts
+
+Preferences page:
+ - default theme

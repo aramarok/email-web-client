@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+	 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	 	http://www.springframework.org/schema/tx
+	 	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	 	http://www.springframework.org/schema/util
+	 	http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="services" class="net.emailwebclient.bl.Services">
+		<property name="userDAO" ref="userDAO" />
+		<property name="emailAccountDAO" ref="emailAccountDAO" />
+	</bean>
+
+	<bean id="userDAO" class="net.emailwebclient.dao.UserDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="emailAccountDAO" class="net.emailwebclient.dao.EmailAccountDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<bean name="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/email_web_client" />
+		<property name="username" value="email_web_client" />
+		<property name="password" value="email_web_client" />
+	</bean>
+	<bean name="springUtil" class="net.emailwebclient.view.utils.SpringUtil" />
+
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+
+	<navigation-rule>
+
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-action>#{LoginBean.login}</from-action>
+			<from-outcome>LOGIN</from-outcome>
+			<to-view-id>/pages/home/home.jsf</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{SessionBean.logout}</from-action>
+			<from-outcome>SUCCESS</from-outcome>
+			<to-view-id>/login.jsf</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{HomeBean.init}</from-action>
+			<from-outcome>HOME_PAGE</from-outcome>
+			<to-view-id>/pages/home/home.jsf</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{AddressBookBean.init}</from-action>
+			<from-outcome>ADDRESS_BOOK_PAGE</from-outcome>
+			<to-view-id>/pages/addressBook/addressBook.jsf</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{ConfigurationBean.init}</from-action>
+			<from-outcome>CONFIGURATION_PAGE</from-outcome>
+			<to-view-id>/pages/configuration/configuration.jsf</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{PreferencesBean.init}</from-action>
+			<from-outcome>PREFERENCES_PAGE</from-outcome>
+			<to-view-id>/pages/preferences/preferences.jsf</to-view-id>
+		</navigation-case>
+		
+		
+
+	</navigation-rule>
+
+</faces-config>

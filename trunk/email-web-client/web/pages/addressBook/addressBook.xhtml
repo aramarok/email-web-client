@@ -1,0 +1,19 @@
+<html xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<body bgcolor="white">
+		<ui:composition template="../../layout/defaultTemplate.xhtml">
+
+			<ui:define name="title">
+				<ice:outputText escape="false" value="#{msg['addressBook.title']}"/>
+			</ui:define>
+
+			<ui:define name="content">
+               Address Book
+			</ui:define>
+
+		</ui:composition>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+
+	<managed-bean>
+		<managed-bean-name>LoginBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.LoginBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ApplicationBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.ApplicationBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>SessionBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.SessionBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>HomeBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.home.HomeBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ConfigurationBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.configuration.ConfigurationBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>AddressBookBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.addressbook.AddressBookBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>PreferencesBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.preferences.PreferencesBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+</faces-config>
