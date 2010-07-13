@@ -8,4 +8,8 @@ public class HomeBean extends BaseBean {
 	public String init() {
 		return JSFNavigationConstants.HOME_PAGE;
 	}
+	
+	public String checkEmail(){
+		return null;
+	}
 }

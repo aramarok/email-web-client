@@ -13,6 +13,7 @@
 	<bean id="services" class="net.emailwebclient.bl.Services">
 		<property name="userDAO" ref="userDAO" />
 		<property name="emailAccountDAO" ref="emailAccountDAO" />
+		<property name="emailDAO" ref="emailDAO" />
 	</bean>
 
 	<bean id="userDAO" class="net.emailwebclient.dao.UserDAO">
@@ -20,6 +21,10 @@
 	</bean>
 
 	<bean id="emailAccountDAO" class="net.emailwebclient.dao.EmailAccountDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="emailDAO" class="net.emailwebclient.dao.EmailDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
 

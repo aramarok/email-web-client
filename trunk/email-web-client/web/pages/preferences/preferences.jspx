@@ -11,8 +11,8 @@
 	</ui:define>
 
 	<ui:define name="content">
-               Preferences
-			</ui:define>
+		Preferences
+	</ui:define>
 
 </ui:composition>
 </body>

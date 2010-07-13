@@ -28,6 +28,17 @@ CREATE TABLE `email_accounts` (
           CONSTRAINT `email_accounts_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`USER_ID`)
         ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC
         
+CREATE TABLE `emails` (
+	`EMAIL_ID` bigint(20) NOT NULL,
+          `EMAIL_ACCOUNT_ID` bigint(20) NOT NULL,
+          `FROM_` varchar(50) NOT NULL,
+          `DATE` date  NOT NULL,
+          `SUBJECT` varchar(50) NOT NULL,
+          
+          PRIMARY KEY  (`EMAIL_ID`),
+          KEY `EMAIL_ACCOUNT_ID_2` (`EMAIL_ACCOUNT_ID`),
+          CONSTRAINT `emails_ibfk_1` FOREIGN KEY (`EMAIL_ACCOUNT_ID`) REFERENCES `EMAIL_ACCOUNTS` (`EMAIL_ACCOUNT_ID`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC
         
 INSERT INTO `users`
 	(`USER_ID`, `USER_NAME`,`PASSWORD`,`FIRST_NAME`,`LAST_NAME`,`CITY`,`AGE`,`SEX`)
@@ -48,3 +59,12 @@ INSERT INTO `email_accounts`
 		(8, 'POP3','GMAIL.COM',92112, 'test8', 'test8', 1, 1);
 
 		
+INSERT INTO `emails`
+	(`EMAIL_ID`, `EMAIL_ACCOUNT_ID`, `FROM_`,`DATE`, `SUBJECT`)
+	VALUES
+		(1, 1,'ionescu popoescu', '2009/10/10 12:31:21', 'subject1'),
+		(2, 2,'ionescu popoescu', '2010/10/10 12:31:21', 'subject2'),
+		(3, 1,'ionescu popoescu', '2009/11/01 12:31:21', 'subject3'),
+		(4, 2,'ionescu popoescu', '2009/10/10 12:31:21', 'subject4'),
+		(5, 1,'ionescu popoescu', '2009/10/10 12:31:21', 'subject5'),
+		(6, 3,'ionescu popoescu', '2009/10/10 12:31:21', 'subject6');
