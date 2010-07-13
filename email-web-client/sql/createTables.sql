@@ -39,6 +39,12 @@ INSERT INTO `email_accounts`
 	(`EMAIL_ACCOUNT_ID`, `PROTOCOL`, `HOST`,`PORT`, `USER_NAME`,`PASSWORD`,`USER_ID`, `USE_EMAIL_ACCOUNT`)
 	VALUES
 		(1, 'POP','GMAIL.COM',995, 'test1', 'test1', 1, 1),
-		(2, 'POP3','GMAIL.COM',921, 'test2', 'test2', 1, 0);
+		(2, 'POP3','yahoo.COM',921, 'test2', 'test3', 1, 0),
+		(3, 'POP','test.COM',123, 'test3', 'test3', 1, 1),
+		(4, 'POP3','home.COM',641, 'test4', 'test4', 1, 1),
+		(5, 'POP','GMAIL.COM',125, 'test5', 'test5', 1, 1),
+		(6, 'imap','GMAIL.COM',905, 'test6', 'test6', 1, 0),
+		(7, 'POP','GMAIL.COM',3354, 'test7', 'test7', 1, 1),
+		(8, 'POP3','GMAIL.COM',92112, 'test8', 'test8', 1, 1);
 
 		

@@ -8,8 +8,8 @@ import net.emailwebclient.view.utils.SpringUtil;
 
 public class LoginBean {
 
-	private String username;
-	private String password;
+	private String username = "test";
+	private String password = "test";
 
 	public String login() {
 		Services services = SpringUtil.getServices();

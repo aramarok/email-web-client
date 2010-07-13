@@ -29,6 +29,12 @@
 		<managed-bean-class>net.emailwebclient.view.managedbeans.home.HomeBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>InboxBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.home.InboxBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 	<managed-bean>
 		<managed-bean-name>ConfigurationBean</managed-bean-name>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12538812620541" configfile="/EMailWebClient/web/WEB-INF/faces-config-navigation.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="562" id="pf12538812950862" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf12780750438410 pf12790243270191 pf12790249928714 pf12790259574937 pf127902600604010 pf127902603829112" path="/*"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.jsf" x="338" y="562" id="pf12780750438411" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf12780750438410" path="/login.jsf"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/home/home.jsf" id="pf12790243270193" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf12790243270191 pf12790259574937" path="/pages/home/home.jsf"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/configuration/configuration.jsf" id="pf12790249928715" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" inlinks="pf12790249928714" path="/pages/configuration/configuration.jsf"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/addressBook/addressBook.jsf" id="pf127902600604011" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf127902600604010" path="/pages/addressBook/addressBook.jsf"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/preferences/preferences.jsf" id="pf127902603829113" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" inlinks="pf127902603829112" path="/pages/preferences/preferences.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="36" y="24" id="pf12538812950862" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf12780750438410 pf12790243270191 pf12790249928714 pf12790259574937 pf127902600604010 pf127902603829112 pf12790520243650" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.jsf" x="720" y="24" id="pf12780750438411" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf12780750438410" path="/login.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home/home.jsf" x="60" y="408" id="pf12790243270193" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf12790243270191 pf12790259574937" path="/pages/home/home.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/configuration/configuration.jsf" x="720" y="264" id="pf12790249928715" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" inlinks="pf12790249928714" path="/pages/configuration/configuration.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/addressBook/addressBook.jsf" x="567" y="348" id="pf127902600604011" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf127902600604010" path="/pages/addressBook/addressBook.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/preferences/preferences.jsf" x="756" y="144" id="pf127902603829113" referenceLink="//@navigationRule.0/@navigationCase.6/@toViewId|" inlinks="pf127902603829112" path="/pages/preferences/preferences.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home/inbox.jsf" x="336" y="372" id="pf12790520243661" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf12790520243650" path="/pages/home/inbox.jsf"/>
   <links id="pf12780750438410" target="pf12780750438411" source="pf12538812950862" outcome="SUCCESS" fromaction="#{SessionBean.logout}"/>
   <links id="pf12790243270191" target="pf12790243270193" source="pf12538812950862" outcome="LOGIN" fromaction="#{LoginBean.login}"/>
   <links id="pf12790249928714" target="pf12790249928715" source="pf12538812950862" outcome="CONFIGURATION_PAGE" fromaction="#{ConfigurationBean.init}"/>
   <links id="pf12790259574937" target="pf12790243270193" source="pf12538812950862" outcome="HOME_PAGE" fromaction="#{HomeBean.init}"/>
   <links id="pf127902600604010" target="pf127902600604011" source="pf12538812950862" outcome="ADDRESS_BOOK_PAGE" fromaction="#{AddressBookBean.init}"/>
   <links id="pf127902603829112" target="pf127902603829113" source="pf12538812950862" outcome="PREFERENCES_PAGE" fromaction="#{PreferencesBean.init}"/>
+  <links id="pf12790520243650" target="pf12790520243661" source="pf12538812950862" outcome="INBOX_PAGE" fromaction="#{InboxBean.init}"/>
 </pageflow:Pageflow>

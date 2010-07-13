@@ -1,0 +1,51 @@
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body bgcolor="white">
+<ui:composition template="../../layout/defaultTemplate.jspx">
+
+	<ui:define name="title">
+		<ice:outputText escape="false" value="#{msg['home.title']}" />
+	</ui:define>
+
+	<ui:define name="content">
+		<ice:panelGroup styleClass="exampleBox panelBorderContainer">
+			<ice:panelBorder id="page" styleClass="pnlBrdrDemo"
+				renderNorth="false" renderSouth="false" renderCenter="true"
+				renderWest="true" renderEast="false" style="border:1px">
+
+				<f:facet name="west">
+					<div class="homeLeftMenu">
+						<ice:commandLink
+							styleClass="link" action="#{InboxBean.init}"
+							value="#{msg['home.menu.inbox']}" />
+						<br/>
+						<ice:commandLink
+						styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.sent']}" />
+						<br/>
+						<ice:commandLink
+						styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.drafts']}" />
+						<br/>
+						<ice:commandLink
+						styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.trash']}" />							
+					</div>
+				</f:facet>
+
+				<f:facet name="center">
+					<div class="scrollableDiv borderTable height255px" style="overflow-x: hidden;">
+						<ui:insert name="contentA" />
+					</div>
+				</f:facet>
+
+			</ice:panelBorder>
+		</ice:panelGroup>
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>

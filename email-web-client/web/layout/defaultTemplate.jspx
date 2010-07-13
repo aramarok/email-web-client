@@ -13,14 +13,14 @@
 		basename="net.emailwebclient.view.resources.messages" />
 
 	<head>
-	<link rel="shortcut icon" href="./images/logoIcon.ico" />
+	<link rel="shortcut icon" href="./images/icon1.jpg" />
 
 	<title>#{msg['application.name']} -
 	#{msg['application.version']}</title>
 
 	<ice:outputStyle href='./xmlhttp/css/xp/xp.css' />
 	<ice:outputStyle href="./css/main.css" />
-	<ice:outputStyle href="#{PreferencesBean.selectedCss}" />
+	<!-- <ice:outputStyle href="#{PreferencesBean.selectedCss}" />   -->
 	
 	<script src="./js/main.js" />
 
@@ -36,15 +36,15 @@
 		<ice:messages />
 
 		<ui:insert name="templateBody">
-			<h:graphicImage url="/images/logo.gif" />
+			<h:graphicImage url="./images/icon1.jpg"  width="150px" height="100px"/>
 
-			<ui:include src="/layout/header.xhtml" />
+			<ui:include src="/layout/header.jspx" />
 
 			<ui:insert name="content">
 
 			</ui:insert>
 
-			<ui:include src="/layout/footer.xhtml" />
+			<ui:include src="/layout/footer.jspx" />
 		</ui:insert>
 
 	</ice:form>

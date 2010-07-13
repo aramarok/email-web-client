@@ -1,0 +1,16 @@
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body bgcolor="white">
+<ui:composition template="home.jspx">
+
+	<ui:define name="contentA">
+		<ice:commandLink styleClass="link" action="#{InboxBean.init}"
+			value="#{msg['home.menu.inbox']}" />
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>

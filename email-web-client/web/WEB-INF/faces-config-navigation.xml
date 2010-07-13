@@ -27,6 +27,12 @@
 		</navigation-case>
 		
 		<navigation-case>
+			<from-action>#{InboxBean.init}</from-action>
+			<from-outcome>INBOX_PAGE</from-outcome>
+			<to-view-id>/pages/home/inbox.jsf</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
 			<from-action>#{AddressBookBean.init}</from-action>
 			<from-outcome>ADDRESS_BOOK_PAGE</from-outcome>
 			<to-view-id>/pages/addressBook/addressBook.jsf</to-view-id>
