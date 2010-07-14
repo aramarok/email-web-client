@@ -33,7 +33,5 @@
 	<classpathentry kind="lib" path="web/WEB-INF/lib/jaxrpc.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/jsf-api.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/jsf-impl.jar"/>
-	<classpathentry kind="lib" path="E:/shareVM/ACI EED/hrsuite/lib/tools/javaee.jar"/>
-	<classpathentry kind="lib" path="E:/shareVM/ACI EED/hrsuite/lib/tools/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

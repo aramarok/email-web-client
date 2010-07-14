@@ -10,14 +10,14 @@ import net.emailwebclient.model.Email;
 import net.emailwebclient.model.EmailAccount;
 import net.emailwebclient.model.User;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 
 public class DAOUtil {
 
-	public static RowMapper getUserRowMapper() {
-		return new RowMapper() {
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public static ParameterizedRowMapper<User> getUserRowMapper() {
+		return new ParameterizedRowMapper<User>() {
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				User user = new User();
 				user.setUserName(rs.getString(UsersTable.USER_NAME.getName()));
 				user.setPassword(rs.getString(UsersTable.PASSWORD.getName()));
@@ -31,9 +31,9 @@ public class DAOUtil {
 		};
 	}
 	
-	public static RowMapper getEmailAccountRowMapper() {
-		return new RowMapper() {
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public static ParameterizedRowMapper<EmailAccount>  getEmailAccountRowMapper() {
+		return new ParameterizedRowMapper<EmailAccount>() {
+			public EmailAccount mapRow(ResultSet rs, int rowNum) throws SQLException {
 				EmailAccount emailAccount = new EmailAccount();
 				emailAccount.setEmailAccountId(rs.getLong(EmailAccountTable.EMAIL_ACCOUNT_ID.getName()));
 				emailAccount.setProtocol(rs.getString(EmailAccountTable.PORT.getName()));
@@ -48,9 +48,9 @@ public class DAOUtil {
 		};
 	}
 	
-	public static RowMapper getEmailRowMapper() {
-		return new RowMapper() {
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public static ParameterizedRowMapper<Email> getEmailRowMapper() {
+		return new ParameterizedRowMapper<Email>() {
+			public Email mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Email email = new Email();
 				email.setEmailId(rs.getLong(EmailTable.EMAIL_ID.getName()));
 				email.setEmailAccountId(rs.getLong(EmailTable.EMAIL_ACCOUNT_ID.getName()));
