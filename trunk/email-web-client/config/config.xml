@@ -1,0 +1,4 @@
+<project name="imported_properties">
+    <property name="tomcat.home" location="h:\_tomcat-5.5.25"/>
+	<property name="clean.tomcat.before.deploy" value="true"/>
+</project>

@@ -1,0 +1,112 @@
+<project name="EMailWebClient" default="build" basedir=".">
+
+	<property name="build" location="build" />
+	<property name="src" location="src" />
+	<property name="lib.dir" value="lib" />
+	<property name="web" location="web" />
+	<property name="dist_unpacked" location="dist/emailwebclient" />
+	<property name="dist_packed" location="dist" />
+	<property name="test" location="test" />
+	<property name="dist_temp" location="dist/temp" />
+
+	<import file="./config/config.xml" />
+
+	<!-- Classpath declaration -->
+	<path id="project.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+
+	</path>
+
+	<!-- Enhance classpath-->
+	<path id="runtime.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${dist_unpacked}/WEB-INF/classes" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="${build}" />
+	</target>
+
+	<!-- COMPILE -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${build}" debug="true" debuglevel="lines,vars,source" target="5">
+			<classpath refid="project.classpath" />
+			<compilerarg value="-Xlint:deprecation" />
+		</javac>
+	</target>
+
+	<!-- BUILD -->
+	<target name="build" depends="compile">
+		<mkdir dir="${dist_unpacked}" />
+		<copy todir="${dist_unpacked}">
+			<fileset dir="${web}" />
+		</copy>
+
+		<antcall target="createIDs" />
+
+		<mkdir dir="${dist_unpacked}/WEB-INF/classes" />
+		<copy todir="${dist_unpacked}/WEB-INF/classes">
+			<fileset dir="${build}" />
+			<fileset dir="${src}">
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+				<include name="**/*.rules" />
+			</fileset>
+		</copy>
+		<mkdir dir="${dist_unpacked}/WEB-INF/classes/META-INF" />
+		<copy todir="${dist_unpacked}/WEB-INF/classes/META-INF">
+			<fileset dir="${src}/META-INF" />
+		</copy>
+
+	</target>
+
+	<!-- DIST -->
+	<target name="dist" depends="build">
+		<war destfile="${dist_packed}/emailwebclient.war" basedir="${dist_unpacked}" webxml="${dist_unpacked}/WEB-INF/web.xml" />
+	</target>
+
+	<!-- DEPLOY UNPACKED -->
+	<target name="deploy" depends="build">
+		<antcall target="clean_tomcat_conditional" />
+		<copy todir="${tomcat.home}/webapps/${webapp-context}">
+			<fileset dir="${dist_unpacked}" />
+		</copy>
+		<touch file="${tomcat.home}/webapps/${webapp-context}/WEB-INF/web.xml" />
+	</target>
+
+	<!-- DEPLOY UNPACKED -->
+	<target name="deploy-non-restart" depends="build">
+		<copy todir="${tomcat.home}/webapps/${webapp-context}">
+			<fileset dir="${dist_unpacked}" />
+		</copy>
+	</target>
+
+	<!-- CLEAN -->
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${dist_unpacked}" />
+		<delete dir="${dist_packed}" />
+	</target>
+
+	<!--DELETES WORK AND TEMP FOLDERS FROM TOMCAT -->
+	<target name="clean_tomcat_conditional" if="clean.tomcat.before.deploy">
+		<antcall target="clean_tomcat" />
+	</target>
+
+	<!--DELETES WORK AND TEMP FOLDERS FROM TOMCAT -->
+	<target name="clean_tomcat">
+		<delete dir="${tomcat.home}/logs" />
+		<delete dir="${tomcat.home}/work" />
+		<delete dir="${tomcat.home}/webapps/${webapp-context}" />
+	</target>
+
+	<!-- Classpath declaration -->
+	<path id="bin_dir">
+		<pathelement location="bin" />
+	</path>
+
+</project>
