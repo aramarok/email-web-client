@@ -6,14 +6,15 @@ import net.emailwebclient.model.User;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
 public class UserDAO {
 
 	private JdbcTemplate jdbcTemplate;
+	private SimpleJdbcTemplate simpleJdbcTemplate;
 
 	public User addUser(User user) {
-		int rows = jdbcTemplate
+		int rows = simpleJdbcTemplate
 				.update(
 						"INSERT INTO users(user_name, password, first_name, last_name, city, age, sex) VALUES(?, ?, ?, ?, ?, ?, ?)",
 						new Object[] { user.getUserName(), user.getPassword(),
@@ -27,7 +28,7 @@ public class UserDAO {
 	}
 
 	public User updateUser(User user) {
-		int rows = jdbcTemplate
+		int rows = simpleJdbcTemplate
 				.update(
 						"UPDATE users SET first_name=?, last_name=?, city=?, age=?, sex=? WHERE user_name=?",
 						new Object[] { user.getFirstName(), user.getLastName(),
@@ -46,16 +47,16 @@ public class UserDAO {
 
 	public User getUser(String userName) {
 		try {
-			return (User) this.jdbcTemplate
+			return (User) this.simpleJdbcTemplate
 					.queryForObject(
 							"SELECT user_name, password, first_name, last_name, city, age, sex FROM users WHERE user_name = ?",
-							new Object[] { userName }, DAOUtil
-									.getUserRowMapper());
+							DAOUtil.getUserRowMapper(),
+							new Object[] { userName });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
 	}
-	
+
 	public List<User> findUsers(User userFilter) {
 		StringBuffer query = new StringBuffer(
 				"SELECT user_name, password, first_name, last_name, city, age, sex FROM users ");
@@ -133,7 +134,8 @@ public class UserDAO {
 		}
 
 		@SuppressWarnings("unchecked")
-		List<User> results =(List<User>)jdbcTemplate.query(query.toString(), DAOUtil.getUserRowMapper());
+		List<User> results = (List<User>) jdbcTemplate.query(query.toString(),
+				DAOUtil.getUserRowMapper());
 		return results;
 	}
 
@@ -143,6 +145,14 @@ public class UserDAO {
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
+	}
+
+	public SimpleJdbcTemplate getSimpleJdbcTemplate() {
+		return simpleJdbcTemplate;
+	}
+
+	public void setSimpleJdbcTemplate(SimpleJdbcTemplate simpleJdbcTemplate) {
+		this.simpleJdbcTemplate = simpleJdbcTemplate;
 	}
 
 }

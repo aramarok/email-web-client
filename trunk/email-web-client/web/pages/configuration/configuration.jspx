@@ -100,8 +100,9 @@
 				<table class="borderTable" cellspacing="3" cellpadding="3">
 					<tr>
 						<td align="left">
-							<ice:commandButton value="#{msg['configuration.accounts.new']}" action="#{ConfigurationBean.addNew}" styleClass="length80px button" />
 							<ice:commandButton value="#{msg['configuration.accounts.save']}" action="#{ConfigurationBean.save}" styleClass="length80px button" />
+							<ice:commandButton value="#{msg['configuration.accounts.delete']}" action="#{ConfigurationBean.delete}" styleClass="length80px button" />
+							<ice:commandButton value="#{msg['configuration.accounts.addNew']}" action="#{ConfigurationBean.addNew}" styleClass="length80px button" />
 						</td>
 					</tr>
 				</table>

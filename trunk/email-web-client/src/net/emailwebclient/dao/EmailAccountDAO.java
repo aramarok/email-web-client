@@ -7,15 +7,19 @@ import net.emailwebclient.model.User;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
 public class EmailAccountDAO {
 
 	private JdbcTemplate jdbcTemplate;
+	private SimpleJdbcTemplate simpleJdbcTemplate;
 
 	// public EmailAccount addEmailAccount(EmailAccount emailAccount) {
 	// int rows = jdbcTemplate
 	// .update(
+	// //
 	// "INSERT INTO email_accounts(email_account_id, password, first_name, last_name, city, age, sex) VALUES(?, ?, ?, ?, ?, ?, ?)",
+	// "INSERT INTO email_accounts(EMAIL_ACCOUNT_ID,PROTOCOL,HOST,PORT,USER_NAME,PASSWORD,USER_ID,USE_EMAIL_ACCOUNT) VALUES(?,?,?,?,?,?,?,?)",
 	// new Object[] { user.getUserName(), user.getPassword(),
 	// user.getFirstName(), user.getLastName(),
 	// user.getCity(), user.getAge(), user.getSex() });
@@ -46,24 +50,23 @@ public class EmailAccountDAO {
 
 	public EmailAccount getEmailAccount(long emailAccountId) {
 		try {
-			return (EmailAccount) this.jdbcTemplate
+			return this.simpleJdbcTemplate
 					.queryForObject(
 							"SELECT email_account_id, protocol, host, port, user_name, password, user_id, use_email_account FROM email_accounts WHERE email_account_id = ?",
-							new Object[] { emailAccountId }, DAOUtil
-									.getEmailAccountRowMapper());
+							DAOUtil.getEmailAccountRowMapper(),
+							new Object[] { emailAccountId });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public List<EmailAccount> getEmailAccounts(User userFilter) {
 		try {
-			return (List<EmailAccount>) this.jdbcTemplate
+			return this.simpleJdbcTemplate
 					.query(
 							"SELECT email_account_id, protocol, host, port, user_name, password, user_id, use_email_account FROM email_accounts WHERE user_id = ?",
-							new Object[] { userFilter.getUserId() }, DAOUtil
-									.getEmailAccountRowMapper());
+							DAOUtil.getEmailAccountRowMapper(),
+							new Object[] { userFilter.getUserId() });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
@@ -75,5 +78,13 @@ public class EmailAccountDAO {
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
+	}
+
+	public SimpleJdbcTemplate getSimpleJdbcTemplate() {
+		return simpleJdbcTemplate;
+	}
+
+	public void setSimpleJdbcTemplate(SimpleJdbcTemplate simpleJdbcTemplate) {
+		this.simpleJdbcTemplate = simpleJdbcTemplate;
 	}
 }

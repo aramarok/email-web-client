@@ -18,20 +18,27 @@
 
 	<bean id="userDAO" class="net.emailwebclient.dao.UserDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />
 	</bean>
 
 	<bean id="emailAccountDAO" class="net.emailwebclient.dao.EmailAccountDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />
 	</bean>
 	
 	<bean id="emailDAO" class="net.emailwebclient.dao.EmailDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />		
 	</bean>
 
 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
+	
+	<bean name="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
