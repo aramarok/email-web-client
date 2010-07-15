@@ -90,7 +90,7 @@
 							<ice:outputText value="#{msg['configuration.accounts.description.useEmailAccount']}" styleClass="label" escape="false" />
 						</td>
 						<td>
-							<ice:inputText value="#{ConfigurationBean.useEmailAccount}" styleClass="length250px input" />
+							<ice:selectBooleanCheckbox value="#{ConfigurationBean.useEmailAccount}" partialSubmit="false" />
 						</td>
 					</tr>
 				</table>
