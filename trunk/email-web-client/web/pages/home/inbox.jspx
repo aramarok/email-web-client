@@ -9,7 +9,9 @@
 	<ui:define name="centerContent">
 		<ice:panelGroup styleClass="tableW">
 			<ice:dataTable var="email" value="#{InboxBean.emails}"
-				columnWidths="10%,80%,10%" styleClass="tableW">
+				columnWidths="20%,70%,10%" styleClass="tableW" 
+				  scrollable="true"
+               scrollHeight="250px">
 				<ice:column>
 					<ice:rowSelector value="#{email.selected}" multiple="true"
 						selectionListener="#{InboxBean.elementRowSelection}" />
@@ -26,17 +28,6 @@
 				</ice:column>
 				<ice:column>
 					<f:facet name="header">
-						<ice:commandSortHeader columnName="date" arrow="true">
-							<ice:outputText styleClass="label" escape="false"
-								value="#{msg['home.menu.inbox.emails.date']}" />
-						</ice:commandSortHeader>
-					</f:facet>
-					<ice:panelGroup styleClass="alignLeft">
-						<ice:outputText styleClass="text" value="#{email.date}" />
-					</ice:panelGroup>
-				</ice:column>
-				<ice:column>
-					<f:facet name="header">
 						<ice:commandSortHeader columnName="subject" arrow="true">
 							<ice:outputText styleClass="label" escape="false"
 								value="#{msg['home.menu.inbox.emails.subject']}" />
@@ -44,6 +35,17 @@
 					</f:facet>
 					<ice:panelGroup styleClass="alignLeft">
 						<ice:outputText styleClass="text" value="#{email.subject}" />
+					</ice:panelGroup>
+				</ice:column>
+				<ice:column>
+					<f:facet name="header">
+						<ice:commandSortHeader columnName="date" arrow="true">
+							<ice:outputText styleClass="label" escape="false"
+								value="#{msg['home.menu.inbox.emails.date']}" />
+						</ice:commandSortHeader>
+					</f:facet>
+					<ice:panelGroup styleClass="alignLeft">
+						<ice:outputText styleClass="text" value="#{email.date}" />
 					</ice:panelGroup>
 				</ice:column>
 			</ice:dataTable>
