@@ -8,6 +8,7 @@ public final class EmailAccount {
 	private int port;
 	private String userName;
 	private String password;
+	private String emailAddress;
 	private long userId;
 	private boolean useEmailAccount;
 	
@@ -83,6 +84,14 @@ public final class EmailAccount {
 
 	public void setSelected(boolean selected) {
 		this.selected = selected;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 
 }

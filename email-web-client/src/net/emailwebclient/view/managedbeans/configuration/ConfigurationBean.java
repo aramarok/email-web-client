@@ -5,9 +5,10 @@ import java.util.List;
 import javax.faces.event.PhaseId;
 
 import net.emailwebclient.model.EmailAccount;
-import net.emailwebclient.model.User;
+import net.emailwebclient.view.SessionBean;
 import net.emailwebclient.view.managedbeans.BaseBean;
 import net.emailwebclient.view.utils.JSFNavigationConstants;
+import net.emailwebclient.view.utils.JSFUtil;
 import net.emailwebclient.view.utils.SpringUtil;
 
 import com.icesoft.faces.component.ext.RowSelectorEvent;
@@ -33,9 +34,8 @@ public class ConfigurationBean extends BaseBean {
 	}
 
 	public String init() {
-		User u = new User();
-		u.setUserId(1);
-		accounts = SpringUtil.getServices().getEmailAccounts(u);
+		
+		accounts = SpringUtil.getServices().getEmailAccounts(((SessionBean)JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser());
 
 		return JSFNavigationConstants.CONFIGURATION_PAGE;
 	}

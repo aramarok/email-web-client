@@ -16,7 +16,7 @@ public class UserDAO {
 	public User addUser(User user) {
 		int rows = simpleJdbcTemplate
 				.update(
-						"INSERT INTO users(user_name, password, first_name, last_name, city, age, sex) VALUES(?, ?, ?, ?, ?, ?, ?)",
+						"INSERT INTO users( user_name, password, first_name, last_name, city, age, sex) VALUES(?, ?, ?, ?, ?, ?, ?)",
 						new Object[] { user.getUserName(), user.getPassword(),
 								user.getFirstName(), user.getLastName(),
 								user.getCity(), user.getAge(), user.getSex() });
@@ -49,7 +49,7 @@ public class UserDAO {
 		try {
 			return (User) this.simpleJdbcTemplate
 					.queryForObject(
-							"SELECT user_name, password, first_name, last_name, city, age, sex FROM users WHERE user_name = ?",
+							"SELECT USER_ID, user_name, password, first_name, last_name, city, age, sex FROM users WHERE user_name = ?",
 							DAOUtil.getUserRowMapper(),
 							new Object[] { userName });
 		} catch (EmptyResultDataAccessException e) {

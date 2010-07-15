@@ -7,33 +7,47 @@
 <ui:composition template="home.jspx">
 
 	<ui:define name="centerContent">
-		<ice:panelGroup styleClass="componentBox">
-			<ice:panelGrid   columns="3" style="float:left;vertical-align:middle;">
-				<ice:outputLabel value="#{msg['home.menu.composeEmail.to']}" />
-				<ice:inputText value="#{ComposeEmailBean.to}" />
-			</ice:panelGrid >
-			<ice:panelGrid  columns="2" style="float:left;vertical-align:middle;">
-				<ice:outputLabel value="#{msg['home.menu.composeEmail.cc']}" />
-				<ice:inputText value="#{ComposeEmailBean.cc}" />
-			</ice:panelGrid>
-			<ice:panelGrid columns="2" style="float:left;vertical-align:middle;">
-				<ice:outputLabel value="#{msg['home.menu.composeEmail.bcc']}" />
-				<ice:inputText value="#{ComposeEmailBean.bcc}" />
-			</ice:panelGrid>
-			<ice:panelGrid columns="2" style="float:left;vertical-align:middle;">
-				<ice:outputLabel value="#{msg['home.menu.composeEmail.subject']}" />
-				<ice:inputText value="#{ComposeEmailBean.subject}" />
-			</ice:panelGrid>
-			
-			<ice:panelGroup styleClass="clearer" />
+		<ice:panelGroup styleClass="tableW">
+			<table border="0" cellpadding="1" cellspacing="1">
+				<tr>
+					<td><ice:outputLabel
+						value="#{msg['home.menu.composeEmail.from']}" /></td>
+					<td><ice:selectOneMenu
+						value="#{ComposeEmailBean.from}"
+						styleClass="length240px">
+						<f:selectItems value="#{ComposeEmailBean.emailAccountsAsSelectItem}" />
+					</ice:selectOneMenu></td>
+				</tr>
+				<tr>
+					<td><ice:outputLabel
+						value="#{msg['home.menu.composeEmail.to']}" /></td>
+					<td><ice:inputText value="#{ComposeEmailBean.to}" /></td>
+				</tr>
+				<tr>
+					<td><ice:outputLabel
+						value="#{msg['home.menu.composeEmail.cc']}" /></td>
+					<td><ice:inputText value="#{ComposeEmailBean.cc}" /></td>
+				</tr>
+				<tr>
+					<td><ice:outputLabel
+						value="#{msg['home.menu.composeEmail.bcc']}" /></td>
+					<td><ice:inputText value="#{ComposeEmailBean.bcc}" /></td>
+				</tr>
+				<tr>
+					<td><ice:outputLabel
+						value="#{msg['home.menu.composeEmail.subject']}" /></td>
+					<td><ice:inputText value="#{ComposeEmailBean.subject}" /></td>
+				</tr>
+			</table>
 
-			<ice:panelGroup styleClass="exampleBox inputRichTextContainer">
-				<ice:inputRichText id="iceInpRchTxt" height="275" width="600"
+			<ice:panelGroup>
+				<ice:inputRichText id="iceInpRchTxt" 
 					toolbar="#{ComposeEmailBean.toolbarMode}"
-					value="#{ComposeEmailBean.value}" language="en" skin="silver" />
+					value="#{ComposeEmailBean.value}" language="en" skin="silver" height="300px"/>
 			</ice:panelGroup>
-			
-			<ice:commandButton  value="#{msg['home.menu.composeEmail.send']}" />
+
+			<ice:commandButton value="#{msg['home.menu.composeEmail.send']}" action="#{ComposeEmailBean.send}"/>
+			<ice:commandButton value="#{msg['home.menu.composeEmail.saveAsDraft']}" action="#{ComposeEmailBean.saveAsDraft}"/>
 		</ice:panelGroup>
 	</ui:define>
 

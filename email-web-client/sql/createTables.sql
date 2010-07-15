@@ -20,6 +20,7 @@ CREATE TABLE email_accounts (
 	PORT bigint(20) NOT NULL,
 	USER_NAME varchar(50) NOT NULL,
 	PASSWORD varchar(50) NOT NULL,
+	EMAIL_ADDRESS varchar(50) NOT NULL,
 	USER_ID bigint(20) NOT NULL,
 	USE_EMAIL_ACCOUNT bit(1) NOT NULL,
 	PRIMARY KEY  (EMAIL_ACCOUNT_ID),
@@ -45,16 +46,16 @@ INSERT INTO users
 		(2, 'test2','test2','Carl','Jason','Arad',32,1);
 		
 INSERT INTO email_accounts
-	(EMAIL_ACCOUNT_ID, PROTOCOL, HOST,PORT, USER_NAME,PASSWORD,USER_ID, USE_EMAIL_ACCOUNT)
+	(EMAIL_ACCOUNT_ID, PROTOCOL, HOST,PORT, USER_NAME, PASSWORD, EMAIL_ADDRESS, USER_ID, USE_EMAIL_ACCOUNT)
 	VALUES
-		(1, 'POP','GMAIL.COM',995, 'test1', 'test1', 1, 1),
-		(2, 'POP3','yahoo.COM',921, 'test2', 'test3', 1, 0),
-		(3, 'POP','test.COM',123, 'test3', 'test3', 1, 1),
-		(4, 'POP3','home.COM',641, 'test4', 'test4', 1, 1),
-		(5, 'POP','GMAIL.COM',125, 'test5', 'test5', 1, 1),
-		(6, 'imap','GMAIL.COM',905, 'test6', 'test6', 1, 0),
-		(7, 'POP','GMAIL.COM',3354, 'test7', 'test7', 1, 1),
-		(8, 'POP3','GMAIL.COM',92112, 'test8', 'test8', 1, 1);
+		(1, 'POP',	'GMAIL.COM',	995, 	'test1', 'test1', 'test1@gmail.com', 1, 1),
+		(2, 'POP3',	'yahoo.COM',	921, 	'test2', 'test3', 'test2@yahoo.com', 1, 0),
+		(3, 'POP',	'test.COM',		123, 	'test3', 'test3', 'test3@test.com', 1, 1),
+		(4, 'POP3',	'home.COM',		641, 	'test4', 'test4', 'test4@gome.com', 1, 1),
+		(5, 'POP',	'GMAIL.COM',	125, 	'test5', 'test5', 'test5@gmail.com', 1, 1),
+		(6, 'imap',	'GMAIL.COM',	905, 	'test6', 'test6', 'test6@gmail.com', 1, 0),
+		(7, 'POP',	'GMAIL.COM',	3354, 	'test7', 'test7', 'test7@gmail.com', 1, 1),
+		(8, 'POP3',	'GMAIL.COM',	92112, 	'test8', 'test8', 'test8@gmail.com', 1, 1);
 		
 INSERT INTO emails
 	(EMAIL_ID, EMAIL_ACCOUNT_ID, FROM_,DATE, SUBJECT)

@@ -19,6 +19,7 @@ public class DAOUtil {
 		return new ParameterizedRowMapper<User>() {
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				User user = new User();
+				user.setUserId(rs.getLong(UsersTable.USER_ID.getName()));
 				user.setUserName(rs.getString(UsersTable.USER_NAME.getName()));
 				user.setPassword(rs.getString(UsersTable.PASSWORD.getName()));
 				user.setLastName(rs.getString(UsersTable.LAST_NAME.getName()));
@@ -41,6 +42,7 @@ public class DAOUtil {
 				emailAccount.setPort(rs.getInt(EmailAccountTable.PORT.getName()));
 				emailAccount.setUserName(rs.getString(EmailAccountTable.USER_NAME.getName()));
 				emailAccount.setPassword(rs.getString(EmailAccountTable.PASSWORD.getName()));
+				emailAccount.setEmailAddress(rs.getString(EmailAccountTable.EMAIL_ADDRESS.getName()));
 				emailAccount.setUserId(rs.getLong(EmailAccountTable.USER_ID.getName()));
 				emailAccount.setUseEmailAccount(rs.getBoolean(EmailAccountTable.USE_EMAIL_ACCOUNT.getName()));
 				return emailAccount;

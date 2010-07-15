@@ -52,7 +52,7 @@ public class EmailAccountDAO {
 		try {
 			return this.simpleJdbcTemplate
 					.queryForObject(
-							"SELECT email_account_id, protocol, host, port, user_name, password, user_id, use_email_account FROM email_accounts WHERE email_account_id = ?",
+							"SELECT email_account_id, protocol, host, port, user_name, password, EMAIL_ADDRESS, user_id, use_email_account FROM email_accounts WHERE email_account_id = ?",
 							DAOUtil.getEmailAccountRowMapper(),
 							new Object[] { emailAccountId });
 		} catch (EmptyResultDataAccessException e) {
@@ -64,7 +64,7 @@ public class EmailAccountDAO {
 		try {
 			return this.simpleJdbcTemplate
 					.query(
-							"SELECT email_account_id, protocol, host, port, user_name, password, user_id, use_email_account FROM email_accounts WHERE user_id = ?",
+							"SELECT email_account_id, protocol, host, port, user_name, password, EMAIL_ADDRESS, user_id, use_email_account FROM email_accounts WHERE user_id = ?",
 							DAOUtil.getEmailAccountRowMapper(),
 							new Object[] { userFilter.getUserId() });
 		} catch (EmptyResultDataAccessException e) {

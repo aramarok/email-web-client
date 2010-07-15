@@ -13,21 +13,22 @@
 	<ui:define name="content">
 
 		<ice:panelGroup styleClass="exampleBox panelBorderContainer">
-			<ice:panelBorder id="page" styleClass="pnlBrdrDemo"
-				renderNorth="false" renderSouth="false" renderCenter="true"
-				renderWest="true" renderEast="false" style="border:1px">
+			<!-- 
+			<ice:panelDivider id="icePnlDvr"
+				dividerPosition="#{HomeBean.position}"
+				orientation="#{HomeBean.orientation}"
+				style="width: 100%;">
 
-				<f:facet name="west">
-					<div class="homeLeftMenu">
+				<f:facet name="first">
+					<div class="homeLeftMenu"><ice:commandLink styleClass="link"
+						action="#{HomeBean.checkEmail}"
+						value="#{msg['home.menu.checkEmail']}" /> <br />
 					<ice:commandLink styleClass="link"
-						action="#{HomeBean.checkEmail}" value="#{msg['home.menu.checkEmail']}" />
-						 <br />
-					<ice:commandLink styleClass="link" action="#{ComposeEmailBean.init}"
-						value="#{msg['home.menu.composeEmail']}" />
-						 <br />
-						  <br />
-						   <br />
-						    <br />
+						action="#{ComposeEmailBean.init}"
+						value="#{msg['home.menu.composeEmail']}" /> <br />
+					<br />
+					<br />
+					<br />
 
 					<ice:commandLink styleClass="link" action="#{InboxBean.init}"
 						value="#{msg['home.menu.inbox']}" /> <br />
@@ -39,13 +40,52 @@
 						value="#{msg['home.menu.trash']}" /></div>
 				</f:facet>
 
-				<f:facet name="center">
+				<f:facet name="second">
 					<div class="scrollableDiv borderTable height500px"
-						style="overflow-x: hidden;"><ui:insert name="centerContent" />
-					</div>
+						style="overflow-x: visible; overflow-y: visible; border-width: 10px">
+					<ui:insert name="centerContent" /></div>
 				</f:facet>
 
+			</ice:panelDivider>
+ -->
+			<ice:panelBorder 
+						renderNorth="false" renderSouth="false" renderCenter="true"
+				renderWest="true" renderEast="false" style="width: 100%;">
+
+				<f:facet name="west">
+					<div class="homeLeftMenu borderTable height500px"
+					style="text-align: center; width:170px;">
+					<ice:commandLink styleClass="link"
+						action="#{HomeBean.checkEmail}"
+						value="#{msg['home.menu.checkEmail']}" /> <br />
+					<ice:commandLink styleClass="link"
+						action="#{ComposeEmailBean.init}"
+						value="#{msg['home.menu.composeEmail']}" /> <br />
+					<br />
+					<br />
+					<br />
+
+					<ice:commandLink styleClass="link" action="#{InboxBean.init}"
+						value="#{msg['home.menu.inbox']}" /> <br />
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.sent']}" /> <br />
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.drafts']}" /> <br />
+					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+						value="#{msg['home.menu.trash']}" />
+						</div>
+				</f:facet>
+
+				<f:facet name="center">
+					<div class="borderTable height500px"
+					style="margin: -4px; margin-left: -40px" ><ui:insert
+						name="centerContent" /></div>
+				</f:facet>
+
+				<f:facet name="east">
+				</f:facet>
 			</ice:panelBorder>
+
 		</ice:panelGroup>
 	</ui:define>
 
