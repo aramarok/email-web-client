@@ -14,12 +14,8 @@ public class UserDAO {
 	private SimpleJdbcTemplate simpleJdbcTemplate;
 
 	public User addUser(User user) {
-		int rows = simpleJdbcTemplate
-				.update(
-						"INSERT INTO users( user_name, password, first_name, last_name, city, age, sex) VALUES(?, ?, ?, ?, ?, ?, ?)",
-						new Object[] { user.getUserName(), user.getPassword(),
-								user.getFirstName(), user.getLastName(),
-								user.getCity(), user.getAge(), user.getSex() });
+		int rows = simpleJdbcTemplate.update("INSERT INTO users( user_name, password, first_name, last_name, city, age, sex) VALUES(?, ?, ?, ?, ?, ?, ?)",
+				new Object[] { user.getUserName(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getCity(), user.getAge(), user.getSex() });
 		if (rows == 1) {
 			return user;
 		} else {
@@ -28,12 +24,8 @@ public class UserDAO {
 	}
 
 	public User updateUser(User user) {
-		int rows = simpleJdbcTemplate
-				.update(
-						"UPDATE users SET first_name=?, last_name=?, city=?, age=?, sex=? WHERE user_name=?",
-						new Object[] { user.getFirstName(), user.getLastName(),
-								user.getCity(), user.getAge(), user.getSex(),
-								user.getUserName() });
+		int rows = simpleJdbcTemplate.update("UPDATE users SET first_name=?, last_name=?, city=?, age=?, sex=? WHERE user_name=?", new Object[] {
+				user.getFirstName(), user.getLastName(), user.getCity(), user.getAge(), user.getSex(), user.getUserName() });
 		if (rows == 1) {
 			return getUser(user.getUserName());
 		} else {
@@ -47,19 +39,16 @@ public class UserDAO {
 
 	public User getUser(String userName) {
 		try {
-			return (User) this.simpleJdbcTemplate
-					.queryForObject(
-							"SELECT USER_ID, user_name, password, first_name, last_name, city, age, sex FROM users WHERE user_name = ?",
-							DAOUtil.getUserRowMapper(),
-							new Object[] { userName });
+			return (User) this.simpleJdbcTemplate.queryForObject(
+					"SELECT USER_ID, user_name, password, first_name, last_name, city, age, sex FROM users WHERE user_name = ?", DAOUtil.getUserRowMapper(),
+					new Object[] { userName });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
 	}
 
 	public List<User> findUsers(User userFilter) {
-		StringBuffer query = new StringBuffer(
-				"SELECT user_name, password, first_name, last_name, city, age, sex FROM users ");
+		StringBuffer query = new StringBuffer("SELECT user_name, password, first_name, last_name, city, age, sex FROM users ");
 
 		if (userFilter != null) {
 
@@ -77,8 +66,7 @@ public class UserDAO {
 				if (andNeeded) {
 					query.append(and);
 				}
-				query.append(" user_name LIKE %" + userFilter.getUserName()
-						+ "%");
+				query.append(" user_name LIKE %" + userFilter.getUserName() + "%");
 				andNeeded = true;
 			}
 
@@ -90,8 +78,7 @@ public class UserDAO {
 				if (andNeeded) {
 					query.append(and);
 				}
-				query.append(" first_name LIKE %" + userFilter.getFirstName()
-						+ "%");
+				query.append(" first_name LIKE %" + userFilter.getFirstName() + "%");
 				andNeeded = true;
 			}
 
@@ -103,8 +90,7 @@ public class UserDAO {
 				if (andNeeded) {
 					query.append(and);
 				}
-				query.append(" last_name LIKE %" + userFilter.getLastName()
-						+ "%");
+				query.append(" last_name LIKE %" + userFilter.getLastName() + "%");
 				andNeeded = true;
 			}
 
@@ -134,10 +120,13 @@ public class UserDAO {
 		}
 
 		@SuppressWarnings("unchecked")
-		List<User> results = (List<User>) jdbcTemplate.query(query.toString(),
-				DAOUtil.getUserRowMapper());
+		List<User> results = (List<User>) jdbcTemplate.query(query.toString(), DAOUtil.getUserRowMapper());
 		return results;
 	}
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;

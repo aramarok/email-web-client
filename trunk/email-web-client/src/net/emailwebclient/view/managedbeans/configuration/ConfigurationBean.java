@@ -18,37 +18,50 @@ public class ConfigurationBean extends BaseBean {
 	private List<EmailAccount> accounts;
 
 	private long emailAccountId;
+	private long userId;
 	private String protocol;
 	private String host;
-	private long port;
+	private String port;
 	private String userName;
 	private String password;
 	private String emailAddress;
-	private boolean useEmailAccount;
+	private Boolean useEmailAccount = true;
 
-	private String emailAddressColumn ="emailAddressColumn";
+	private String emailAddressColumn = "emailAddressColumn";
 	private String hostColumn = "hostColumn";
 	private String protocolColumn = "protocolColumn";
 	private String sortColumn = "emailAddressColumn";
 	private boolean sortOrder = true;
 
 	public ConfigurationBean() {
-		// init();
 	}
 
 	public String init() {
-		
-		accounts = SpringUtil.getServices().getEmailAccounts(((SessionBean)JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
+		clearSelection();
+		accounts = SpringUtil.getServices().getEmailAccounts(((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
 
 		return JSFNavigationConstants.CONFIGURATION_PAGE;
 	}
 
+	private void clearSelection() {
+		this.emailAccountId = -1;
+		this.userId = -1;
+		this.protocol = null;
+		this.host = null;
+		this.port = null;
+		this.userName = null;
+		this.password = null;
+		this.emailAddress = null;
+		this.useEmailAccount = null;
+	}
+
 	private void loadAccountData(long emailAccountId) {
-		EmailAccount selectedAccount = SpringUtil.getServices()
-				.getEmailAccount(emailAccountId);
+		EmailAccount selectedAccount = SpringUtil.getServices().getEmailAccount(emailAccountId);
+		this.emailAccountId = selectedAccount.getEmailAccountId();
+		this.userId = selectedAccount.getUserId();
 		this.protocol = selectedAccount.getProtocol();
 		this.host = selectedAccount.getHost();
-		this.port = selectedAccount.getPort();
+		this.port = String.valueOf(selectedAccount.getPort());
 		this.userName = selectedAccount.getUserName();
 		this.password = selectedAccount.getPassword();
 		this.emailAddress = selectedAccount.getEmailAddress();
@@ -61,11 +74,11 @@ public class ConfigurationBean extends BaseBean {
 			e.queue();
 			return;
 		}
+		clearSelection();
 		findSelectedElement();
 	}
 
 	private void findSelectedElement() {
-
 		for (EmailAccount o : accounts) {
 			if (o.isSelected()) {
 				loadAccountData(o.getEmailAccountId());
@@ -75,16 +88,45 @@ public class ConfigurationBean extends BaseBean {
 	}
 
 	public String addNew() {
+		EmailAccount emailAccount = new EmailAccount();
+		emailAccount.setProtocol(protocol);
+		emailAccount.setHost(host);
+		emailAccount.setPort(Long.parseLong(port));
+		emailAccount.setUserName(userName);
+		emailAccount.setPassword(password);
+		emailAccount.setEmailAddress(emailAddress);
+		emailAccount.setUseEmailAccount(useEmailAccount);
+		emailAccount.setUserId(((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
+		SpringUtil.getServices().addEmailAccount(emailAccount);
+		init();
 		return null;
 	}
 
 	public String save() {
+		EmailAccount emailAccount = new EmailAccount();
+		emailAccount.setEmailAccountId(emailAccountId);
+		emailAccount.setUserId(userId);
+		emailAccount.setProtocol(protocol);
+		emailAccount.setHost(host);
+		emailAccount.setPort(Long.parseLong(port));
+		emailAccount.setUserName(userName);
+		emailAccount.setPassword(password);
+		emailAccount.setEmailAddress(emailAddress);
+		emailAccount.setUseEmailAccount(useEmailAccount);
+		SpringUtil.getServices().updateEmailAccount(emailAccount);
+		init();
 		return null;
 	}
 
 	public String delete() {
+		SpringUtil.getServices().deleteEmailAccount(emailAccountId);
+		init();
 		return null;
 	}
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public List<EmailAccount> getAccounts() {
 		return accounts;
@@ -110,11 +152,11 @@ public class ConfigurationBean extends BaseBean {
 		this.host = host;
 	}
 
-	public long getPort() {
+	public String getPort() {
 		return port;
 	}
 
-	public void setPort(long port) {
+	public void setPort(String port) {
 		this.port = port;
 	}
 
@@ -134,11 +176,11 @@ public class ConfigurationBean extends BaseBean {
 		this.password = password;
 	}
 
-	public boolean isUseEmailAccount() {
+	public Boolean getUseEmailAccount() {
 		return useEmailAccount;
 	}
 
-	public void setUseEmailAccount(boolean useEmailAccount) {
+	public void setUseEmailAccount(Boolean useEmailAccount) {
 		this.useEmailAccount = useEmailAccount;
 	}
 

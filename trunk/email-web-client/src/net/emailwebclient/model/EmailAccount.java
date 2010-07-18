@@ -5,14 +5,18 @@ public final class EmailAccount {
 	private long emailAccountId;
 	private String protocol;
 	private String host;
-	private int port;
+	private long port;
 	private String userName;
 	private String password;
 	private String emailAddress;
 	private long userId;
 	private boolean useEmailAccount;
-	
+
 	private boolean selected; // for UI selection
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public long getEmailAccountId() {
 		return emailAccountId;
@@ -38,11 +42,11 @@ public final class EmailAccount {
 		this.host = host;
 	}
 
-	public int getPort() {
+	public long getPort() {
 		return port;
 	}
 
-	public void setPort(int port) {
+	public void setPort(long port) {
 		this.port = port;
 	}
 

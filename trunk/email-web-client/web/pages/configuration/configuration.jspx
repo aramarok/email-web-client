@@ -102,6 +102,13 @@
 			</tr>
 			<tr>
 				<td><ice:outputText
+					value="#{msg['configuration.accounts.description.emailAddress']}"
+					styleClass="label" escape="false" /></td>
+				<td><ice:inputText value="#{ConfigurationBean.emailAddress}"
+					styleClass="length250px input" /></td>
+			</tr>
+			<tr>
+				<td><ice:outputText
 					value="#{msg['configuration.accounts.description.useEmailAccount']}"
 					styleClass="label" escape="false" /></td>
 				<td><ice:selectBooleanCheckbox

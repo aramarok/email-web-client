@@ -14,7 +14,7 @@ import net.emailwebclient.view.utils.SpringUtil;
 
 import com.icesoft.faces.component.ext.RowSelectorEvent;
 
-public class InboxBean extends BaseBean {
+public class SentBean extends BaseBean {
 
 	private List<Email> emails;
 
@@ -31,9 +31,9 @@ public class InboxBean extends BaseBean {
 	@Override
 	public String init() {
 		clearSelection();
-		emails = SpringUtil.getServices().getInboxEmails(((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
+		emails = SpringUtil.getServices().getSentEmails(((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
 
-		return JSFNavigationConstants.INBOX_PAGE;
+		return JSFNavigationConstants.SENT_PAGE;
 	}
 
 	public void elementRowSelection(RowSelectorEvent e) {

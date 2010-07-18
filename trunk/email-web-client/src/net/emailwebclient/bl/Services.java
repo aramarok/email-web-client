@@ -59,14 +59,48 @@ public class Services {
 		return emailDAO.getEmails(userId, EmailTypes.INBOX);
 	}
 
+	public List<Email> getSentEmails(long userId) {
+		return emailDAO.getEmails(userId, EmailTypes.SENT);
+	}
+
+	public List<Email> getDraftEmails(long userId) {
+		return emailDAO.getEmails(userId, EmailTypes.DRAFT);
+	}
+
+	public List<Email> getTrashEmails(long userId) {
+		return emailDAO.getEmails(userId, EmailTypes.TRASH);
+	}
+
+	public boolean saveEmailAsDraft(long emailAccountId, Email email) {
+		return emailDAO.saveEmailAsDraft(emailAccountId, email);
+	}
+
 	public boolean sendEmail(long emailAccountId, EMailContent emailContent) {
 		EmailAccount ea = getEmailAccount(emailAccountId);
 		emailContent.setHost(ea.getHost());
 		emailContent.setPort(ea.getPort());
 		emailContent.setPassword(ea.getPassword());
 		emailContent.setFrom(ea.getEmailAddress());
-		return EMailSender.send(emailContent);
+		EMailSender.send(emailContent);
+
+		Email email = new Email();
+		email.copyFromEMailContentObject(emailContent);
+		email.setEmailAccountId(emailAccountId);
+
+		return emailDAO.saveEmailAsSent(emailAccountId, email);
 	}
+
+	public Email getEmail(long emailId) {
+		return emailDAO.getEmail(emailId);
+	}
+	
+	public boolean checkEmail(long userId){
+		return emailDAO.checkEmail(userId);
+	}
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;

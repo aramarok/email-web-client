@@ -48,15 +48,14 @@
 
 			</ice:panelDivider>
  -->
-			<ice:panelBorder 
-						renderNorth="false" renderSouth="false" renderCenter="true"
-				renderWest="true" renderEast="false" style="width: 100%;">
+			<ice:panelBorder renderNorth="false" renderSouth="false"
+				renderCenter="true" renderWest="true" renderEast="false"
+				style="width: 100%;">
 
 				<f:facet name="west">
 					<div class="homeLeftMenu borderTable height500px"
-					style="text-align: center; width:170px;">
-					<ice:commandLink styleClass="link"
-						action="#{HomeBean.checkEmail}"
+						style="text-align: center; width: 170px;"><ice:commandLink
+						styleClass="link" action="#{HomeBean.checkEmail}"
 						value="#{msg['home.menu.checkEmail']}" /> <br />
 					<ice:commandLink styleClass="link"
 						action="#{ComposeEmailBean.init}"
@@ -67,18 +66,17 @@
 
 					<ice:commandLink styleClass="link" action="#{InboxBean.init}"
 						value="#{msg['home.menu.inbox']}" /> <br />
-					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
+					<ice:commandLink styleClass="link" action="#{SentBean.init}"
 						value="#{msg['home.menu.sent']}" /> <br />
-					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
-						value="#{msg['home.menu.drafts']}" /> <br />
-					<ice:commandLink styleClass="link" action="#{HomeBean.init}"
-						value="#{msg['home.menu.trash']}" />
-						</div>
+					<ice:commandLink styleClass="link" action="#{DraftsBean.init}"
+						value="#{msg['home.menu.drafts']} (#{HomeBean.draftCount})" /> <br />
+					<ice:commandLink styleClass="link" action="#{TrashBean.init}"
+						value="#{msg['home.menu.trash']} (#{HomeBean.trashCount})" /></div>
 				</f:facet>
 
 				<f:facet name="center">
 					<div class="borderTable height500px"
-					style="margin: -4px; margin-left: -40px" ><ui:insert
+						style="margin: -4px; margin-left: -40px"><ui:insert
 						name="centerContent" /></div>
 				</f:facet>
 

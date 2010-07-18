@@ -13,7 +13,7 @@ public class EMailContent implements EMail {
 
 	private String password;
 	private String host;
-	private int port;
+	private long port;
 
 	public EMailContent(String[] to, String[] cc, String[] bcc, String subject, String content) {
 		this.to = to;
@@ -35,7 +35,7 @@ public class EMailContent implements EMail {
 		this.host = host;
 	}
 
-	public void setPort(int port) {
+	public void setPort(long port) {
 		this.port = port;
 	}
 
@@ -44,12 +44,10 @@ public class EMailContent implements EMail {
 	}
 
 	public String[] getDestinationBCCEmailAddresses() {
-		System.out.println("bcc " + bcc);
 		return bcc;
 	}
 
 	public String[] getDestinationCCEmailAddresses() {
-		System.out.println("cc -" + cc[0]+"-");
 		return cc;
 	}
 
@@ -69,7 +67,7 @@ public class EMailContent implements EMail {
 		return host;
 	}
 
-	public int getSenderPort() {
+	public long getSenderPort() {
 		return port;
 	}
 

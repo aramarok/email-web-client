@@ -1,21 +1,40 @@
 package net.emailwebclient.view.managedbeans.home;
 
+import net.emailwebclient.view.SessionBean;
 import net.emailwebclient.view.managedbeans.BaseBean;
 import net.emailwebclient.view.utils.JSFNavigationConstants;
+import net.emailwebclient.view.utils.JSFUtil;
+import net.emailwebclient.view.utils.SpringUtil;
 
 public class HomeBean extends BaseBean {
 
 	private String orientation = "vertical";
-    private int position = 10;
-    
+	private int position = 10;
+
+	public String getDraftCount() {
+		return String.valueOf(SpringUtil.getServices().getDraftEmails(
+				((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId()).size());
+	}
+
+	public String getTrashCount() {
+		return String.valueOf(SpringUtil.getServices().getTrashEmails(
+				((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId()).size());
+	}
+	
+	public String checkEmail(){
+		SpringUtil.getServices().checkEmail(((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
+		
+		return null;
+	}
+
 	@Override
 	public String init() {
 		return JSFNavigationConstants.HOME_PAGE;
 	}
-	
-	public String checkEmail(){
-		return null;
-	}
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public String getOrientation() {
 		return orientation;
