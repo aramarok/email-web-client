@@ -8,21 +8,23 @@ import com.icesoft.faces.component.ext.RowSelectorEvent;
 
 import net.emailwebclient.model.Email;
 import net.emailwebclient.model.User;
+import net.emailwebclient.view.SessionBean;
 import net.emailwebclient.view.managedbeans.BaseBean;
 import net.emailwebclient.view.utils.JSFNavigationConstants;
+import net.emailwebclient.view.utils.JSFUtil;
 import net.emailwebclient.view.utils.SpringUtil;
 
-public class InboxBean extends BaseBean{
-	
+public class InboxBean extends BaseBean {
+
 	private List<Email> emails;
-	
+
 	@Override
 	public String init() {
 		User u = new User();
 		u.setUserId(1);
-		emails = SpringUtil.getServices().getInboxEmails(u);
-		
-		return JSFNavigationConstants.INBOX_PAGE ;
+		emails = SpringUtil.getServices().getInboxEmails(((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
+
+		return JSFNavigationConstants.INBOX_PAGE;
 	}
 
 	public void elementRowSelection(RowSelectorEvent e) {
@@ -31,9 +33,9 @@ public class InboxBean extends BaseBean{
 			e.queue();
 			return;
 		}
-		//findSelectedElement();
+		// findSelectedElement();
 	}
-	
+
 	public List<Email> getEmails() {
 		return emails;
 	}
@@ -41,5 +43,5 @@ public class InboxBean extends BaseBean{
 	public void setEmails(List<Email> emails) {
 		this.emails = emails;
 	}
-	
+
 }
