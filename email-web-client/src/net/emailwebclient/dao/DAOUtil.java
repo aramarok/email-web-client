@@ -5,13 +5,13 @@ import java.sql.SQLException;
 
 import net.emailwebclient.dao.tables.EmailAccountTable;
 import net.emailwebclient.dao.tables.EmailTable;
+import net.emailwebclient.dao.tables.EmailTypes;
 import net.emailwebclient.dao.tables.UsersTable;
 import net.emailwebclient.model.Email;
 import net.emailwebclient.model.EmailAccount;
 import net.emailwebclient.model.User;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
-
 
 public class DAOUtil {
 
@@ -31,15 +31,15 @@ public class DAOUtil {
 			}
 		};
 	}
-	
-	public static ParameterizedRowMapper<EmailAccount>  getEmailAccountRowMapper() {
+
+	public static ParameterizedRowMapper<EmailAccount> getEmailAccountRowMapper() {
 		return new ParameterizedRowMapper<EmailAccount>() {
 			public EmailAccount mapRow(ResultSet rs, int rowNum) throws SQLException {
 				EmailAccount emailAccount = new EmailAccount();
 				emailAccount.setEmailAccountId(rs.getLong(EmailAccountTable.EMAIL_ACCOUNT_ID.getName()));
-				emailAccount.setProtocol(rs.getString(EmailAccountTable.PORT.getName()));
+				emailAccount.setProtocol(rs.getString(EmailAccountTable.PROTOCOL.getName()));
 				emailAccount.setHost(rs.getString(EmailAccountTable.HOST.getName()));
-				emailAccount.setPort(rs.getInt(EmailAccountTable.PORT.getName()));
+				emailAccount.setPort(rs.getLong(EmailAccountTable.PORT.getName()));
 				emailAccount.setUserName(rs.getString(EmailAccountTable.USER_NAME.getName()));
 				emailAccount.setPassword(rs.getString(EmailAccountTable.PASSWORD.getName()));
 				emailAccount.setEmailAddress(rs.getString(EmailAccountTable.EMAIL_ADDRESS.getName()));
@@ -49,7 +49,7 @@ public class DAOUtil {
 			}
 		};
 	}
-	
+
 	public static ParameterizedRowMapper<Email> getEmailRowMapper() {
 		return new ParameterizedRowMapper<Email>() {
 			public Email mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -57,8 +57,14 @@ public class DAOUtil {
 				email.setEmailId(rs.getLong(EmailTable.EMAIL_ID.getName()));
 				email.setEmailAccountId(rs.getLong(EmailTable.EMAIL_ACCOUNT_ID.getName()));
 				email.setFrom(rs.getString(EmailTable.FROM_.getName()));
+				email.setReplyTo(rs.getString(EmailTable.REPLY_TO.getName()));
+				email.setTo(rs.getString(EmailTable.TO_.getName()));
+				email.setCc(rs.getString(EmailTable.CC.getName()));
+				email.setBcc(rs.getString(EmailTable.BCC.getName()));
 				email.setDate(rs.getDate(EmailTable.DATE.getName()));
 				email.setSubject(rs.getString(EmailTable.SUBJECT.getName()));
+				email.setContent(rs.getString(EmailTable.CONTENT.getName()));
+				email.setType(EmailTypes.getEmailType(rs.getInt(EmailTable.TYPE.getName())));
 				return email;
 			}
 		};

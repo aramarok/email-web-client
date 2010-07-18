@@ -1,7 +1,5 @@
 package net.emailwebclient.email;
 
-import java.util.List;
-
 public interface EMail {
 
 	String getSenderEmailAddress();
@@ -10,7 +8,7 @@ public interface EMail {
 
 	String getSenderHost();
 
-	int getSenderPort();
+	long getSenderPort();
 
 	String getSubject();
 

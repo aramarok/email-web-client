@@ -18,7 +18,7 @@ public class EMailSender {
 		Properties props = new Properties();
 		props.put(Constants.SMTP_USER, email.getSenderEmailAddress());
 		props.put(Constants.SMTP_HOST, email.getSenderHost());
-		props.put(Constants.SMTP_PORT, email.getSenderPort());
+		props.put(Constants.SMTP_PORT, String.valueOf(email.getSenderPort()));
 		props.put(Constants.SMTP_START_TLS_ENABLE, "true");
 		props.put(Constants.SMTP_AUTH, "true");
 		props.put(Constants.SMTP_DEBUG, "true");

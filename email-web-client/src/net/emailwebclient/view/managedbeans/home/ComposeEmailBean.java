@@ -12,6 +12,7 @@ import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
+import net.emailwebclient.model.Email;
 import net.emailwebclient.model.EmailAccount;
 import net.emailwebclient.view.SessionBean;
 import net.emailwebclient.view.managedbeans.BaseBean;
@@ -101,8 +102,15 @@ public class ComposeEmailBean extends BaseBean {
 	}
 
 	public String saveAsDraft() {
-		System.out.println(content);
-		return null;
+		Email email = new Email();
+		email.setTo(to);
+		email.setCc(cc);
+		email.setBcc(bcc);
+		email.setSubject(subject);
+		email.setContent(content);
+		SpringUtil.getServices().saveEmailAsDraft(Long.valueOf(from), email);
+		clearChanges();
+		return JSFNavigationConstants.INBOX_PAGE;
 	}
 
 	public String discard() {
@@ -132,6 +140,10 @@ public class ComposeEmailBean extends BaseBean {
 		showBcc = true;
 		return null;
 	}
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public String getContent() {
 		return content;

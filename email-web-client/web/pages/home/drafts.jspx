@@ -8,16 +8,16 @@
 
 	<ui:define name="centerContent">
 		<div class="borderTable tableW height160px"><ice:dataTable
-			var="email" value="#{InboxBean.emails}" columnWidths="20%,70%,10%"
+			var="email" value="#{DraftsBean.emails}" columnWidths="20%,70%,10%"
 			styleClass="tableW" scrollable="true" scrollHeight="155px">
 			<ice:column>
 				<ice:rowSelector value="#{email.selected}" multiple="false"
-					selectionListener="#{InboxBean.elementRowSelection}" />
+					selectionListener="#{DraftsBean.elementRowSelection}" />
 
 				<f:facet name="header">
 					<ice:commandSortHeader columnName="from" arrow="true">
 						<ice:outputText styleClass="label" escape="false"
-							value="#{msg['home.menu.inbox.emails.from']}" />
+							value="#{msg['home.menu.drafts.emails.from']}" />
 					</ice:commandSortHeader>
 				</f:facet>
 				<ice:panelGroup styleClass="alignCenter">
@@ -28,7 +28,7 @@
 				<f:facet name="header">
 					<ice:commandSortHeader columnName="subject" arrow="true">
 						<ice:outputText styleClass="label" escape="false"
-							value="#{msg['home.menu.inbox.emails.subject']}" />
+							value="#{msg['home.menu.drafts.emails.subject']}" />
 					</ice:commandSortHeader>
 				</f:facet>
 				<ice:panelGroup styleClass="alignLeft">
@@ -39,7 +39,7 @@
 				<f:facet name="header">
 					<ice:commandSortHeader columnName="date" arrow="true">
 						<ice:outputText styleClass="label" escape="false"
-							value="#{msg['home.menu.inbox.emails.date']}" />
+							value="#{msg['home.menu.drafts.emails.date']}" />
 					</ice:commandSortHeader>
 				</f:facet>
 				<ice:panelGroup styleClass="alignLeft">
@@ -51,46 +51,46 @@
 		<table border="0" style="width: 100%" cellpadding="1" cellspacing="5">
 			<tr>
 				<td style="width: 1%; text-align: right;"><ice:outputLabel
-					value="#{msg['home.menu.inbox.email.from']}" /></td>
-				<td><ice:outputLabel value="#{InboxBean.from}"
+					value="#{msg['home.menu.drafts.email.from']}" /></td>
+				<td><ice:outputLabel value="#{DraftsBean.from}"
 					styleClass="length240px" /></td>
 			</tr>
 			<tr>
 				<td style="text-align: right;"><ice:outputLabel
-					value="#{msg['home.menu.inbox.email.to']}"
-					visible="#{InboxBean.showDetails}" /></td>
-				<td><ice:outputLabel value="#{InboxBean.to}"
-					styleClass="length240px" visible="#{InboxBean.showDetails}" /></td>
+					value="#{msg['home.menu.drafts.email.to']}"
+					visible="#{DraftsBean.showDetails}" /></td>
+				<td><ice:outputLabel value="#{DraftsBean.to}"
+					styleClass="length240px" visible="#{DraftsBean.showDetails}" /></td>
 			</tr>
 			<tr>
 				<td style="text-align: right;"><ice:outputLabel
-					value="#{msg['home.menu.inbox.email.date']}"
-					visible="#{InboxBean.showDetails}" /></td>
-				<td><ice:outputLabel value="#{InboxBean.date}"
-					styleClass="length240px" visible="#{InboxBean.showDetails}" /></td>
+					value="#{msg['home.menu.drafts.email.date']}"
+					visible="#{DraftsBean.showDetails}" /></td>
+				<td><ice:outputLabel value="#{DraftsBean.date}"
+					styleClass="length240px" visible="#{DraftsBean.showDetails}" /></td>
 			</tr>
 			<tr>
 				<td style="text-align: right;"><ice:outputLabel
-					value="#{msg['home.menu.inbox.email.subject']}" /></td>
-				<td><ice:outputLabel value="#{InboxBean.subject}"
+					value="#{msg['home.menu.drafts.email.subject']}" /></td>
+				<td><ice:outputLabel value="#{DraftsBean.subject}"
 					styleClass="length240px" /></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td><ice:commandLink styleClass="link"
-					action="#{InboxBean.showDetails}"
-					visible="#{!InboxBean.showDetails}"
-					value="#{msg['home.menu.inbox.email.showDetails']}" /> <ice:commandLink
-					styleClass="link" action="#{InboxBean.hideDetails}"
-					visible="#{InboxBean.showDetails}"
-					value="#{msg['home.menu.inbox.email.hideDetails']}" /></td>
+					action="#{DraftsBean.showDetails}"
+					visible="#{!DraftsBean.showDetails}"
+					value="#{msg['home.menu.drafts.email.showDetails']}" /> <ice:commandLink
+					styleClass="link" action="#{DraftsBean.hideDetails}"
+					visible="#{DraftsBean.showDetails}"
+					value="#{msg['home.menu.drafts.email.hideDetails']}" /></td>
 			</tr>
 		</table>
 
 
 		<div class="scrollableDiv borderTable height210px"
 			style="overflow-x: hidden;"><ice:outputLabel
-			value="#{InboxBean.content}" height="233px" /></div>
+			value="#{DraftsBean.content}" height="233px" /></div>
 		</div>
 
 	</ui:define>

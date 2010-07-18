@@ -17,8 +17,8 @@ public class EmailAccountDAO {
 		int rows = simpleJdbcTemplate
 				.update(
 						"INSERT INTO email_accounts (PROTOCOL, HOST, PORT, USER_NAME, PASSWORD, EMAIL_ADDRESS, USER_ID, USE_EMAIL_ACCOUNT) VALUES (?, ?, ?, ? , ?, ?, ?, ?)",
-						new Object[] { emailAccount.getProtocol(), emailAccount.getHost(), emailAccount.getUserName(), emailAccount.getPassword(),
-								emailAccount.getEmailAddress(), emailAccount.getUserId(), emailAccount.isUseEmailAccount() });
+						new Object[] { emailAccount.getProtocol(), emailAccount.getHost(), emailAccount.getPort(), emailAccount.getUserName(),
+								emailAccount.getPassword(), emailAccount.getEmailAddress(), emailAccount.getUserId(), emailAccount.isUseEmailAccount() });
 		if (rows == 1) {
 			return emailAccount;
 		} else {
@@ -28,9 +28,9 @@ public class EmailAccountDAO {
 
 	public EmailAccount updateEmailAccount(EmailAccount emailAccount) {
 		int rows = simpleJdbcTemplate.update(
-				"UPDATE email_accounts SET PROTOCOL=?, HOST=?,PORT=?, USER_NAME=?, PASSWORD=?, EMAIL_ADDRESS=?, USE_EMAIL_ACCOUNT=? WHERE EMAIL_ACCOUNT_ID=?",
-				new Object[] { emailAccount.getProtocol(), emailAccount.getHost(), emailAccount.getUserName(), emailAccount.getPassword(),
-						emailAccount.getEmailAddress(), emailAccount.isUseEmailAccount(), emailAccount.getEmailAccountId() });
+				"UPDATE email_accounts SET PROTOCOL=?, HOST=?, PORT=?, USER_NAME=?, PASSWORD=?, EMAIL_ADDRESS=?, USE_EMAIL_ACCOUNT=? WHERE EMAIL_ACCOUNT_ID=?",
+				new Object[] { emailAccount.getProtocol(), emailAccount.getHost(), emailAccount.getPort(), emailAccount.getUserName(),
+						emailAccount.getPassword(), emailAccount.getEmailAddress(), emailAccount.isUseEmailAccount(), emailAccount.getEmailAccountId() });
 		if (rows == 1) {
 			return getEmailAccount(emailAccount.getEmailAccountId());
 		} else {
@@ -68,6 +68,10 @@ public class EmailAccountDAO {
 			return null;
 		}
 	}
+
+	// ////////////////////////
+	// Getters and setters
+	// ////////////////////////
 
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;

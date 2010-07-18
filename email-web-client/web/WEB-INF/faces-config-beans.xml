@@ -41,6 +41,27 @@
 		<managed-bean-class>net.emailwebclient.view.managedbeans.home.InboxBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>SentBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.home.SentBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<managed-bean>
+		<managed-bean-name>DraftsBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.home.DraftsBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<managed-bean>
+		<managed-bean-name>TrashBean</managed-bean-name>
+		<managed-bean-class>net.emailwebclient.view.managedbeans.home.TrashBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
 
 	<managed-bean>
 		<managed-bean-name>ConfigurationBean</managed-bean-name>
