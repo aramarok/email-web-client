@@ -17,16 +17,19 @@ public class ConfigurationBean extends BaseBean {
 
 	private List<EmailAccount> accounts;
 
+	private long emailAccountId;
 	private String protocol;
 	private String host;
 	private long port;
 	private String userName;
 	private String password;
+	private String emailAddress;
 	private boolean useEmailAccount;
 
+	private String emailAddressColumn ="emailAddressColumn";
 	private String hostColumn = "hostColumn";
-	private String userNameColumn = "userNameColumn";
-	private String sortColumn = "hostColumn";
+	private String protocolColumn = "protocolColumn";
+	private String sortColumn = "emailAddressColumn";
 	private boolean sortOrder = true;
 
 	public ConfigurationBean() {
@@ -35,7 +38,7 @@ public class ConfigurationBean extends BaseBean {
 
 	public String init() {
 		
-		accounts = SpringUtil.getServices().getEmailAccounts(((SessionBean)JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser());
+		accounts = SpringUtil.getServices().getEmailAccounts(((SessionBean)JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
 
 		return JSFNavigationConstants.CONFIGURATION_PAGE;
 	}
@@ -48,6 +51,7 @@ public class ConfigurationBean extends BaseBean {
 		this.port = selectedAccount.getPort();
 		this.userName = selectedAccount.getUserName();
 		this.password = selectedAccount.getPassword();
+		this.emailAddress = selectedAccount.getEmailAddress();
 		this.useEmailAccount = selectedAccount.isUseEmailAccount();
 	}
 
@@ -146,12 +150,12 @@ public class ConfigurationBean extends BaseBean {
 		this.hostColumn = hostColumn;
 	}
 
-	public String getUserNameColumn() {
-		return userNameColumn;
+	public String getProtocolColumn() {
+		return protocolColumn;
 	}
 
-	public void setUserNameColumn(String userNameColumn) {
-		this.userNameColumn = userNameColumn;
+	public void setProtocolColumn(String protocolColumn) {
+		this.protocolColumn = protocolColumn;
 	}
 
 	public String getSortColumn() {
@@ -168,6 +172,22 @@ public class ConfigurationBean extends BaseBean {
 
 	public void setSortOrder(boolean sortOrder) {
 		this.sortOrder = sortOrder;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public String getEmailAddressColumn() {
+		return emailAddressColumn;
+	}
+
+	public void setEmailAddressColumn(String emailAddressColumn) {
+		this.emailAddressColumn = emailAddressColumn;
 	}
 
 }

@@ -2,8 +2,8 @@ package net.emailwebclient.dao;
 
 import java.util.List;
 
+import net.emailwebclient.dao.tables.EmailTypes;
 import net.emailwebclient.model.Email;
-import net.emailwebclient.model.User;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,13 +14,12 @@ public class EmailDAO {
 	private JdbcTemplate jdbcTemplate;
 	private SimpleJdbcTemplate simpleJdbcTemplate;
 
-	public List<Email> getInboxEmails(User userFilter) {
+	public List<Email> getEmails(long userId, EmailTypes emailType) {
 		try {
 			return simpleJdbcTemplate
 					.query(
-							"SELECT email_id, e.email_account_id, from_, date, subject FROM emails e, email_accounts ea WHERE ea.email_account_id = e.email_account_id AND ea.user_id = ?",
-							DAOUtil.getEmailRowMapper(),
-							new Object[] { userFilter.getUserId() });
+							"SELECT email_id, e.email_account_id, from_, date, subject, type FROM emails e, email_accounts ea WHERE ea.email_account_id = e.email_account_id AND ea.user_id = ? AND e.type =  ?",
+							DAOUtil.getEmailRowMapper(), new Object[] { userId, emailType });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
@@ -41,4 +40,5 @@ public class EmailDAO {
 	public void setSimpleJdbcTemplate(SimpleJdbcTemplate simpleJdbcTemplate) {
 		this.simpleJdbcTemplate = simpleJdbcTemplate;
 	}
+
 }

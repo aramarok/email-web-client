@@ -27,12 +27,12 @@
 	<context-param>
 		<description>To allow multiple windows for a single application.</description>
 		<param-name>com.icesoft.faces.concurrentDOMViews</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	<context-param>
 		<description>Turn on/off application-wide synchronous or asynchronous updates.	</description>
 		<param-name>com.icesoft.faces.synchronousUpdate</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	<context-param>
 		<description>Google Maps API key is required if gMap component is used. Sign up for an API key from http://code.google.com/apis/maps/signup.html</description>
@@ -49,7 +49,8 @@
 	</context-param>
 	<servlet>
 		<servlet-name>Persistent Faces Servlet</servlet-name>
-		<servlet-class>com.icesoft.faces.webapp.xmlhttp.PersistentFacesServlet</servlet-class>
+		<servlet-class>
+			com.icesoft.faces.webapp.xmlhttp.PersistentFacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -69,7 +70,8 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>uploadServlet</servlet-name>
-		<servlet-class>com.icesoft.faces.component.inputfile.FileUploadServlet</servlet-class>
+		<servlet-class>
+			com.icesoft.faces.component.inputfile.FileUploadServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -77,7 +79,8 @@
 		<url-pattern>/uploadHtml</url-pattern>
 	</servlet-mapping>
 	<listener>
-		<listener-class>com.icesoft.faces.util.event.servlet.ContextEventRepeater</listener-class>
+		<listener-class>
+			com.icesoft.faces.util.event.servlet.ContextEventRepeater</listener-class>
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>

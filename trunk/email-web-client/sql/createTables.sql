@@ -2,7 +2,7 @@ CREATE database if NOT EXISTS `email_web_client`;
 USE `email_web_client`;
 
 CREATE TABLE users (                     
-	USER_ID  bigint(20) NOT NULL,
+	USER_ID  bigint(20) NOT NULL auto_increment,
 	USER_NAME varchar(50) NOT NULL,                        
 	PASSWORD varchar(50) NOT NULL,                         
 	FIRST_NAME varchar(50) default NULL,                   
@@ -14,7 +14,7 @@ CREATE TABLE users (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC
  
 CREATE TABLE email_accounts (
-	EMAIL_ACCOUNT_ID bigint(20) NOT NULL,
+	EMAIL_ACCOUNT_ID bigint(20) NOT NULL auto_increment,
 	PROTOCOL varchar(50) NOT NULL,
 	HOST varchar(50) NOT NULL,
 	PORT bigint(20) NOT NULL,
@@ -29,16 +29,22 @@ CREATE TABLE email_accounts (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC
         
 CREATE TABLE emails (
-	EMAIL_ID bigint(20) NOT NULL,
+	EMAIL_ID bigint(20) NOT NULL auto_increment,
 	EMAIL_ACCOUNT_ID bigint(20) NOT NULL,
-	FROM_ varchar(50) NOT NULL,
-	DATE date  NOT NULL,
-	SUBJECT varchar(50) NOT NULL,          
+	FROM_ varchar(100) NOT NULL,
+	REPLY_TO varchar(100) NOT NULL,
+	TO_ varchar(100) NOT NULL,
+	CC varchar(100) NOT NULL,
+	BCC varchar(100) NOT NULL,
+	DATE datetime NOT NULL,
+	SUBJECT varchar(100) NOT NULL,
+	CONTENT varchar(99999) NOT NULL,
+	TYPE int NOT NULL,
 	PRIMARY KEY  (EMAIL_ID),
 	KEY EMAIL_ACCOUNT_ID_2 (EMAIL_ACCOUNT_ID),
 	CONSTRAINT emails_ibfk_1 FOREIGN KEY (EMAIL_ACCOUNT_ID) REFERENCES EMAIL_ACCOUNTS (EMAIL_ACCOUNT_ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC
-        
+       
 INSERT INTO users
 	(USER_ID, USER_NAME,PASSWORD,FIRST_NAME,LAST_NAME,CITY,AGE,SEX)
 	VALUES
@@ -58,7 +64,7 @@ INSERT INTO email_accounts
 		(8, 'POP3',	'GMAIL.COM',	92112, 	'test8', 'test8', 'test8@gmail.com', 1, 1);
 		
 INSERT INTO emails
-	(EMAIL_ID, EMAIL_ACCOUNT_ID, FROM_,DATE, SUBJECT)
+	(EMAIL_ID, EMAIL_ACCOUNT_ID, FROM_,DATE, SUBJECT, TYPE)
 	VALUES
 		(1, 1,'ionescu popoescu', '2009/10/10 12:31:21', 'subject1'),
 		(2, 2,'ionescu popoescu', '2010/10/10 12:31:21', 'subject2'),
