@@ -18,6 +18,8 @@ public class TrashBean extends BaseBean {
 
 	private List<Email> emails;
 
+	private long emailId;
+	
 	private String from;
 	private String to;
 	private String date;
@@ -65,6 +67,7 @@ public class TrashBean extends BaseBean {
 
 	private void loadEmailData(long emailId) {
 		Email selectedEmail = SpringUtil.getServices().getEmail(emailId);
+		this.emailId = selectedEmail.getEmailId();
 		from = selectedEmail.getFrom();
 		to = selectedEmail.getTo();
 		date = dateFormat.format(selectedEmail.getDate());
@@ -79,6 +82,12 @@ public class TrashBean extends BaseBean {
 
 	public String hideDetails() {
 		showDetails = false;
+		return null;
+	}
+	
+	public String delete() {
+		SpringUtil.getServices().deleteEmailFromTrash(emailId);
+		init();
 		return null;
 	}
 

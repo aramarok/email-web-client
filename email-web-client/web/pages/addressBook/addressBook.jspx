@@ -4,16 +4,117 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <body bgcolor="white">
-<ui:composition template="../../layout/defaultTemplate.jspx">
+<ui:composition template="../../layout/addEditTemplate.jspx">
 
 	<ui:define name="title">
 		<ice:outputText escape="false" value="#{msg['addressBook.title']}" />
 	</ui:define>
 
-	<ui:define name="content">
-               Address Book
-			</ui:define>
+	<ui:define name="contentList">
+		<ice:dataTable var="contact"
+			value="#{AddressBookBean.contacts}" width="100%"
+			sortColumn="firstName"
+			sortAscending="#{AddressBookBean.sortOrder}"
+			columnWidths="50%,30%,20%">
+			<ice:column>
+				<ice:rowSelector value="#{contact.selected}" multiple="false"
+					selectionListener="#{AddressBookBean.elementRowSelection}" />
+				<f:facet name="header">
+					<ice:commandSortHeader
+						columnName="firstName" arrow="true">
+						<ice:outputText styleClass="label" escape="false"
+							value="#{msg['addressBook.contacts.table.firstName']}" />
+					</ice:commandSortHeader>
+				</f:facet>
+				<ice:panelGroup styleClass="alignLeft">
+					<ice:outputText
+						styleClass="text"
+						value="#{contact.firstName}" />
+				</ice:panelGroup>
+			</ice:column>
+			<ice:column>
+				<f:facet name="header">
+					<ice:commandSortHeader columnName="lastName"
+						arrow="true">
+						<ice:outputText styleClass="label" escape="false"
+							value="#{msg['addressBook.contacts.table.lastName']}" />
+					</ice:commandSortHeader>
+				</f:facet>
+				<ice:panelGroup styleClass="alignCenter">
+					<ice:outputText
+						styleClass="text"
+						value="#{contact.lastName}" />
+				</ice:panelGroup>
+			</ice:column>
+			<ice:column>
+				<f:facet name="header">
+					<ice:commandSortHeader
+						columnName="info" arrow="true">
+						<ice:outputText styleClass="label" escape="false"
+							value="#{msg['addressBook.contacts.table.info']}" />
+					</ice:commandSortHeader>
+				</f:facet>
+				<ice:panelGroup styleClass="alignLeft">
+					<ice:outputText
+						styleClass="text"
+						value="#{contact.info}" />
+				</ice:panelGroup>
+			</ice:column>
+		</ice:dataTable>
+	</ui:define>
 
+	<ui:define name="contentDescription">
+		<table class="borderTable" cellspacing="3" cellpadding="3" border="0">
+			<tr>
+				<td class="length150px"><ice:outputText
+					value="#{msg['addressBook.contacts.description.firstName']}"
+					styleClass="label" escape="false" /></td>
+				<td><ice:inputText value="#{AddressBookBean.firstName}"
+					styleClass="length250px input" /></td>
+			</tr>
+			<tr>
+				<td class="length150px"><ice:outputText
+					value="#{msg['addressBook.contacts.description.lastName']}"
+					styleClass="label" escape="false" /></td>
+				<td><ice:inputText value="#{AddressBookBean.lastName}"
+					styleClass="length250px input" /></td>
+			</tr>
+			<tr>
+				<td><ice:outputText
+					value="#{msg['addressBook.contacts.description.emailAddress']}"
+					styleClass="label" escape="false" /></td>
+				<td><ice:inputText value="#{AddressBookBean.emailAddress}"
+					styleClass="length250px input" /></td>
+			</tr>
+			<tr>
+				<td><ice:outputText
+					value="#{msg['addressBook.contacts.description.info']}"
+					styleClass="label" escape="false" /></td>
+				<td><ice:inputText value="#{AddressBookBean.info}"
+					styleClass="length250px input" /></td>
+			</tr>
+		</table>
+	</ui:define>
+
+	<ui:define name="contentButtons">
+		<table class="borderTable" cellspacing="3" cellpadding="3">
+			<tr>
+				<td align="left"><ice:commandButton
+					value="#{msg['addressBook.contacts.save']}"
+					action="#{AddressBookBean.save}" styleClass="length80px button" />
+				<ice:commandButton value="#{msg['addressBook.contacts.delete']}"
+					action="#{AddressBookBean.delete}" styleClass="length80px button" />
+				<ice:commandButton value="#{msg['addressBook.contacts.addNew']}"
+					action="#{AddressBookBean.addNew}" styleClass="length80px button" />
+				</td>
+			</tr>
+		</table>
+	</ui:define>
+	<!-- 
+			<ui:define name="pagePopups">
+			    <ui:include src="Popup.xhtml"/>
+			</ui:define>
+ -->
 </ui:composition>
 </body>
 </html>

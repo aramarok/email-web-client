@@ -91,7 +91,9 @@
 		<div class="scrollableDiv borderTable height210px"
 			style="overflow-x: hidden;"><ice:outputLabel
 			value="#{TrashBean.content}" height="233px" /></div>
-		</div>
+		<ice:commandButton
+			value="#{msg['home.menu.trash.email.deleteForever']}"
+			action="#{TrashBean.delete}" /></div>
 
 	</ui:define>
 

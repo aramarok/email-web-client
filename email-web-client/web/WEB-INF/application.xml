@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
 	 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	 	http://www.springframework.org/schema/tx
 	 	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
 	 	http://www.springframework.org/schema/util
-	 	http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+	 	http://www.springframework.org/schema/util/spring-util-2.5.xsd
+	 	http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
 	<bean id="services" class="net.emailwebclient.bl.Services">
 		<property name="userDAO" ref="userDAO" />
 		<property name="emailAccountDAO" ref="emailAccountDAO" />
 		<property name="emailDAO" ref="emailDAO" />
+		<property name="contactDAO" ref="contactDAO" />
 	</bean>
 
 	<bean id="userDAO" class="net.emailwebclient.dao.UserDAO">
@@ -25,20 +28,26 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />
 	</bean>
-	
+
 	<bean id="emailDAO" class="net.emailwebclient.dao.EmailDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
-		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />		
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />
+	</bean>
+
+	<bean id="contactDAO" class="net.emailwebclient.dao.ContactDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate" />
 	</bean>
 
 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
-	<bean name="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+
+	<bean name="simpleJdbcTemplate"
+		class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
 		<constructor-arg ref="dataSource" />
 	</bean>
-	
+
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
@@ -54,5 +63,6 @@
 		<property name="password" value="email_web_client" />
 	</bean>
 	<bean name="springUtil" class="net.emailwebclient.view.utils.SpringUtil" />
+
 
 </beans>

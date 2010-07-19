@@ -91,7 +91,8 @@
 		<div class="scrollableDiv borderTable height210px"
 			style="overflow-x: hidden;"><ice:outputLabel
 			value="#{DraftsBean.content}" height="233px" /></div>
-		</div>
+		<ice:commandButton value="#{msg['home.menu.drafts.email.delete']}"
+			action="#{DraftsBean.delete}" /></div>
 
 	</ui:define>
 

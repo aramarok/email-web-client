@@ -13,6 +13,10 @@ import javax.mail.internet.MimeMessage;
 
 public class EMailSender {
 
+	public void test(){
+		System.out.println("==============test");
+	}
+	
 	public static boolean send(EMail email) {
 
 		Properties props = new Properties();
