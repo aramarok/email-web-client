@@ -60,6 +60,10 @@ public class EmailDAO {
 		}
 	}
 
+	public boolean checkEmail(long userId) {
+		return true;
+	}
+
 	// ////////////////////////
 	// Getters and setters
 	// ////////////////////////

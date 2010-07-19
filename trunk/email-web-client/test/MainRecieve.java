@@ -13,7 +13,7 @@ public class MainRecieve {
 		try {
 
 			GmailUtilities gmail = new GmailUtilities();
-			gmail.setUserPass("USERNAME@gmail.com", "PASSWORD");
+			gmail.setUserPass("test@gmail.com", "test");
 			gmail.connect();
 			gmail.openFolder("INBOX");
 
@@ -26,7 +26,7 @@ public class MainRecieve {
 
 			// Uncomment the below line to print the body of the message.
 			// Remember it will eat-up your bandwidth if you have 100's of
-			// messages. //gmail.printAllMessageEnvelopes();
+			 gmail.printAllMessageEnvelopes();
 			gmail.printAllMessages();
 
 		} catch (Exception e) {

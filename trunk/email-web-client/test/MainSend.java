@@ -9,12 +9,12 @@ import java.util.*;
  
 public class MainSend
 {
-    String  d_email = "",
-            d_password = "",
+    String  d_email = "test@gmail.com",
+            d_password = "test",
             d_host = "smtp.gmail.com",
             d_port  = "465",
-            m_to = "",
-            m_subject = "Testing",
+            m_to = "test@rocketmail.com",
+            m_subject = "Testing2",
             m_text = "Hey, this is the testing email.";
     
     public MainSend()
@@ -30,7 +30,7 @@ public class MainSend
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
  
-        SecurityManager security = System.getSecurityManager();
+      //  SecurityManager security = System.getSecurityManager();
  
         try
         {
