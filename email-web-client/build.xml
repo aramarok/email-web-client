@@ -46,20 +46,13 @@
 			<fileset dir="${web}" />
 		</copy>
 
-		<antcall target="createIDs" />
-
 		<mkdir dir="${dist_unpacked}/WEB-INF/classes" />
 		<copy todir="${dist_unpacked}/WEB-INF/classes">
 			<fileset dir="${build}" />
 			<fileset dir="${src}">
 				<include name="**/*.properties" />
 				<include name="**/*.xml" />
-				<include name="**/*.rules" />
 			</fileset>
-		</copy>
-		<mkdir dir="${dist_unpacked}/WEB-INF/classes/META-INF" />
-		<copy todir="${dist_unpacked}/WEB-INF/classes/META-INF">
-			<fileset dir="${src}/META-INF" />
 		</copy>
 
 	</target>
