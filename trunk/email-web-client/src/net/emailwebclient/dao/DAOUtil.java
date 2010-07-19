@@ -3,10 +3,12 @@ package net.emailwebclient.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import net.emailwebclient.dao.tables.ContactsTable;
 import net.emailwebclient.dao.tables.EmailAccountTable;
 import net.emailwebclient.dao.tables.EmailTable;
 import net.emailwebclient.dao.tables.EmailTypes;
 import net.emailwebclient.dao.tables.UsersTable;
+import net.emailwebclient.model.Contact;
 import net.emailwebclient.model.Email;
 import net.emailwebclient.model.EmailAccount;
 import net.emailwebclient.model.User;
@@ -66,6 +68,21 @@ public class DAOUtil {
 				email.setContent(rs.getString(EmailTable.CONTENT.getName()));
 				email.setType(EmailTypes.getEmailType(rs.getInt(EmailTable.TYPE.getName())));
 				return email;
+			}
+		};
+	}
+
+	public static ParameterizedRowMapper<Contact> getContactRowMapper() {
+		return new ParameterizedRowMapper<Contact>() {
+			public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Contact contact = new Contact();
+				contact.setContactId(rs.getLong(ContactsTable.CONTACT_ID.getName()));
+				contact.setFirstName(rs.getString(ContactsTable.FIRST_NAME.getName()));
+				contact.setLastName(rs.getString(ContactsTable.LAST_NAME.getName()));
+				contact.setEmailAddress(rs.getString(ContactsTable.EMAIL_ADDRESS.getName()));
+				contact.setInfo(rs.getString(ContactsTable.INFO.getName()));
+				contact.setUserId(rs.getLong(ContactsTable.USER_ID.getName()));
+				return contact;
 			}
 		};
 	}

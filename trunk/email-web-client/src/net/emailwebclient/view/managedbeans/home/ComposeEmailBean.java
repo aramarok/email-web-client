@@ -49,7 +49,7 @@ public class ComposeEmailBean extends BaseBean {
 	@Override
 	public String init() {
 		clearChanges();
-		emailAccounts = SpringUtil.getServices().getEmailAccounts(
+		emailAccounts = SpringUtil.getServices().getEmailAccountsToUse(
 				((SessionBean) JSFUtil.getBean(SessionBean.class.getSimpleName())).getLoggedInUser().getUserId());
 		emailAccountsAsSelectItem = new ArrayList<SelectItem>();
 		for (EmailAccount ea : emailAccounts) {

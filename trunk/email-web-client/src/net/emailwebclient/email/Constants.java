@@ -18,4 +18,9 @@ public class Constants {
 	public static final String SSL_SOCKET_FACTORY = "javax.net.ssl.SSLSocketFactory";
 	public static final String SMTP_SOCKET_FACTORY_FALLBACK = "mail.smtp.socketFactory.fallback";
 
+	public static final String POP3_SOCKET_FACTORY = "mail.pop3.socketFactory.class";
+	public static final String POP3_SOCKET_FACTORY_FALLBACK = "mail.pop3.socketFactory.fallback";
+	public static final String POP3_PORT = "mail.pop3.port";
+	public static final String POP3_SOCKET_FACTORY_PORT = "mail.pop3.socketFactory.port";
+
 }

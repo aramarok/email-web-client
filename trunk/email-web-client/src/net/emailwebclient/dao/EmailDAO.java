@@ -19,7 +19,7 @@ public class EmailDAO {
 		try {
 			return simpleJdbcTemplate
 					.query(
-							"SELECT e.EMAIL_ID, e.EMAIL_ACCOUNT_ID, e.FROM_, e.REPLY_TO, e.TO_, e.CC, e.BCC, e.DATE, e.SUBJECT, e.CONTENT, e.TYPE FROM emails e, email_accounts ea WHERE ea.email_account_id = e.email_account_id AND ea.user_id = ? AND e.type =  ?",
+							"SELECT e.EMAIL_ID, e.EMAIL_ACCOUNT_ID, e.FROM_, e.REPLY_TO, e.TO_, e.CC, e.BCC, e.DATE, e.SUBJECT, e.CONTENT, e.TYPE FROM emails e, email_accounts ea WHERE ea.email_account_id = e.email_account_id AND ea.user_id = ? AND e.type = ? ORDER BY email_id DESC",
 							DAOUtil.getEmailRowMapper(), new Object[] { userId, EmailTypes.getEmailType(emailType) });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
@@ -60,8 +60,22 @@ public class EmailDAO {
 		}
 	}
 
-	public boolean checkEmail(long userId) {
-		return true;
+	public boolean sendEmailToTrash(long emailId) {
+		int rows = simpleJdbcTemplate.update("update emails set type=? where EMAIL_ID=?", new Object[] { EmailTypes.getEmailType(EmailTypes.TRASH), emailId });
+		if (rows == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean deleteEmailFromTrash(long emailId) {
+		int rows = simpleJdbcTemplate.update("delete from emails where EMAIL_ID=? AND TYPE=?", new Object[] { emailId, EmailTypes.getEmailType(EmailTypes.TRASH) });
+		if (rows == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	// ////////////////////////

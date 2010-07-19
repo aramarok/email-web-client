@@ -62,7 +62,18 @@ public class EmailAccountDAO {
 		try {
 			return this.simpleJdbcTemplate
 					.query(
-							"SELECT email_account_id, protocol, host, port, user_name, password, EMAIL_ADDRESS, user_id, use_email_account FROM email_accounts WHERE user_id = ?",
+							"SELECT email_account_id, protocol, host, port, user_name, password, EMAIL_ADDRESS, user_id, use_email_account FROM email_accounts WHERE user_id = ? ORDER BY email_account_id DESC",
+							DAOUtil.getEmailAccountRowMapper(), new Object[] { userId });
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
+
+	public List<EmailAccount> getEmailAccountsToUse(long userId) {
+		try {
+			return this.simpleJdbcTemplate
+					.query(
+							"SELECT email_account_id, protocol, host, port, user_name, password, EMAIL_ADDRESS, user_id, use_email_account FROM email_accounts WHERE user_id = ? AND use_email_account=true ",
 							DAOUtil.getEmailAccountRowMapper(), new Object[] { userId });
 		} catch (EmptyResultDataAccessException e) {
 			return null;
